@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos de Léa — Masseuse certifiée Lyon · Un cocon de joie</title>
+  <meta name="description" content="Découvrez Léa, masseuse certifiée en massage californien à Lyon. Formée à la relation d'aide par le toucher, elle propose des soins personnalisés à domicile, en entreprise et en résidence." />
+  <link rel="canonical" href="https://www.unconcondejoie.fr/a-propos.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+  <header>
+    <nav class="nav nav--solid" :class="{ 'is-scrolled': isScrolled }">
+      <div class="nav__container">
+        <a href="index.html" class="nav__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="a-propos.html" class="nav__link is-active">À propos</a></li>
+          <li><a href="prestations.html" class="nav__link">Prestations</a></li>
+          <li><a href="tarifs.html" class="nav__link">Tarifs</a></li>
+          <li><a href="faq.html" class="nav__link">FAQ</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta">Réserver</a></li>
+        </ul>
+        <button class="nav__hamburger" :class="{ 'is-open': menuOpen }" @click="toggleMenu" aria-label="Ouvrir le menu" :aria-expanded="String(menuOpen)"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <nav class="mobile-menu" :class="{ 'is-open': menuOpen }">
+      <a href="index.html" class="mobile-menu__link" @click="closeMenu">Accueil</a><div class="mobile-menu__divider"></div>
+      <a href="a-propos.html" class="mobile-menu__link" @click="closeMenu">À propos</a>
+      <a href="prestations.html" class="mobile-menu__link" @click="closeMenu">Prestations</a>
+      <a href="tarifs.html" class="mobile-menu__link" @click="closeMenu">Tarifs</a>
+      <a href="faq.html" class="mobile-menu__link" @click="closeMenu">FAQ</a>
+      <a href="contact.html" class="mobile-menu__cta" @click="closeMenu">Prendre rendez-vous</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container"><div class="page-hero__content">
+        <nav aria-label="Fil d'Ariane"><p class="breadcrumb"><a href="index.html">Accueil</a> <span>/</span> <span aria-current="page">À propos</span></p></nav>
+        <h1 class="page-hero__title">Bonjour, je suis <em>Léa</em></h1>
+        <p class="page-hero__subtitle">Masseuse bien-être certifiée · Lyon</p>
+      </div></div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-split">
+          <div class="about-image-wrap fade-up">
+            <div class="about-image-border"></div>
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=700&q=80" alt="Léa, masseuse bien-être certifiée à Lyon" class="about-image" width="560" height="700" loading="eager" />
+          </div>
+          <div class="fade-up">
+            <p class="section-header__tag">Mon histoire</p>
+            <h2 class="about-content__title">Un parcours guidé par la <em>passion du bien-être</em></h2>
+            <p class="about-content__lead">Après un parcours professionnel qui m'a appris l'importance de prendre soin de soi, j'ai décidé de créer <strong>Un cocon de joie</strong>.</p>
+            <p class="about-content__text">Mon approche est celle d'une passionnée du bien-être, formée au <strong>massage californien</strong> — un soin reconnu pour sa grande douceur, ses effleurages enveloppants et ses vertus profondément relaxantes.</p>
+            <p class="about-content__text">Je suis également en cours de formation <em>Relation d'aide par le toucher</em>, une approche qui enrichit ma pratique avec une dimension d'écoute et de présence bienveillante.</p>
+            <p class="about-content__text">Ma mission est simple : vous offrir une <strong>parenthèse de douceur</strong>, un moment rien qu'à vous, où vous pouvez vous reconnecter à votre corps et retrouver un équilibre intérieur.</p>
+            <a href="contact.html" class="btn btn--primary" style="margin-top:1.5rem">Prendre rendez-vous</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tarifs-section">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <p class="section-header__tag">Ma mission</p>
+          <h2 class="section-header__title">Ce qui guide <em>chaque séance</em></h2>
+        </header>
+        <div class="about-values" style="grid-template-columns:repeat(2,1fr);max-width:860px;margin:0 auto">
+          <article class="about-value fade-up">
+            <div class="about-value__icon">🤲</div>
+            <h3 class="about-value__title">Personnalisation</h3>
+            <p class="about-value__text">Je m'adapte à chaque personne — vos zones de tension, votre préférence de confort (table, fauteuil, futon), votre rythme. Aucune séance ne ressemble à une autre.</p>
+          </article>
+          <article class="about-value fade-up">
+            <div class="about-value__icon">🌿</div>
+            <h3 class="about-value__title">Produits naturels</h3>
+            <p class="about-value__text">J'utilise exclusivement des huiles de massage bio, respectueuses de votre peau. Mon linge est toujours propre entre chaque séance.</p>
+          </article>
+          <article class="about-value fade-up">
+            <div class="about-value__icon">🏠</div>
+            <h3 class="about-value__title">Confort absolu</h3>
+            <p class="about-value__text">Je viens à vous. Chez vous, dans votre entreprise ou en résidence. Vous n'avez qu'à prévoir un espace calme et chauffé.</p>
+          </article>
+          <article class="about-value fade-up">
+            <div class="about-value__icon">💛</div>
+            <h3 class="about-value__title">Bienveillance</h3>
+            <p class="about-value__text">Une écoute attentive, une présence douce, un respect total de votre corps et de vos limites. Vous repartez ressourcé(e) et apaisé(e).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-section__title">Prête à vous offrir un <em>moment de douceur</em> ?</h2>
+        <p class="cta-section__text">Contactez-moi pour convenir d'un créneau qui vous convient.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--gold">Réserver une séance</a>
+          <a href="prestations.html" class="btn btn--outline-light">Voir les soins</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div><a href="index.html" class="footer__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a><p class="footer__tagline">Léa, masseuse certifiée à Lyon. Domicile, entreprise, résidence.</p><p class="footer__mention">Massage à but non thérapeutique uniquement. Aucun caractère sexuel ou érotique.</p></div>
+        <div><p class="footer__col-title">Navigation</p><nav class="footer__nav"><a href="index.html" class="footer__nav-link">Accueil</a><a href="a-propos.html" class="footer__nav-link">À propos</a><a href="prestations.html" class="footer__nav-link">Prestations</a><a href="tarifs.html" class="footer__nav-link">Tarifs</a><a href="faq.html" class="footer__nav-link">FAQ</a><a href="contact.html" class="footer__nav-link">Contact</a></nav></div>
+        <div><p class="footer__col-title">Contact &amp; Horaires</p><address class="footer__contact" style="font-style:normal"><div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span><a href="tel:+33673323801">06.73.32.38.01</a></span></div><div class="footer__contact-item"><span class="footer__contact-icon">✉️</span><span><a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></span></div></address><div class="footer__hours" style="margin-top:1.5rem"><strong>Lun–Mer</strong> 14h→19h · <strong>Jeu–Ven</strong> 9h→19h<br><strong>Sam</strong> 8h→10h · <strong>Dim</strong> Fermé</div></div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Un cocon de joie</p>
+        <p class="footer__credit">Site créé par <a href="https://central-web-agency.com/index.html" target="_blank" rel="noopener">CWA · Central Web Agency</a></p>
+        <nav class="footer__legal"><a href="#" class="footer__legal-link">Mentions légales</a><a href="#" class="footer__legal-link">Confidentialité</a></nav>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

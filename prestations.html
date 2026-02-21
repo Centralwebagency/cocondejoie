@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestations — Massage californien domicile, entreprise & résidence Lyon · Un cocon de joie</title>
+  <meta name="description" content="Massage californien à domicile (65€/h), en entreprise et en résidence/EHPAD à Lyon. Huiles bio, table de massage fournie. Léa, masseuse certifiée." />
+  <link rel="canonical" href="https://www.unconcondejoie.fr/prestations.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+  <header>
+    <nav class="nav nav--solid" :class="{ 'is-scrolled': isScrolled }">
+      <div class="nav__container">
+        <a href="index.html" class="nav__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+          <li><a href="prestations.html" class="nav__link is-active">Prestations</a></li>
+          <li><a href="tarifs.html" class="nav__link">Tarifs</a></li>
+          <li><a href="faq.html" class="nav__link">FAQ</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta">Réserver</a></li>
+        </ul>
+        <button class="nav__hamburger" :class="{ 'is-open': menuOpen }" @click="toggleMenu" aria-label="Ouvrir le menu" :aria-expanded="String(menuOpen)"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <nav class="mobile-menu" :class="{ 'is-open': menuOpen }">
+      <a href="index.html" class="mobile-menu__link" @click="closeMenu">Accueil</a><div class="mobile-menu__divider"></div>
+      <a href="a-propos.html" class="mobile-menu__link" @click="closeMenu">À propos</a>
+      <a href="prestations.html" class="mobile-menu__link" @click="closeMenu">Prestations</a>
+      <a href="tarifs.html" class="mobile-menu__link" @click="closeMenu">Tarifs</a>
+      <a href="faq.html" class="mobile-menu__link" @click="closeMenu">FAQ</a>
+      <a href="contact.html" class="mobile-menu__cta" @click="closeMenu">Prendre rendez-vous</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container"><div class="page-hero__content">
+        <nav aria-label="Fil d'Ariane"><p class="breadcrumb"><a href="index.html">Accueil</a> <span>/</span> <span aria-current="page">Prestations</span></p></nav>
+        <h1 class="page-hero__title">Mes <em>prestations</em></h1>
+        <p class="page-hero__subtitle">Massage californien · Domicile · Entreprise · Résidence</p>
+      </div></div>
+    </div>
+
+    <!-- MASSAGE CALIFORNIEN -->
+    <section class="section" id="massage-californien">
+      <div class="container">
+        <div class="about-split">
+          <div class="fade-up">
+            <p class="section-header__tag">La technique signature</p>
+            <h2 class="about-content__title">Le massage <em>californien</em></h2>
+            <p class="about-content__lead">Un soin à l'huile, reconnu pour sa grande douceur et ses vertus profondément relaxantes.</p>
+            <p class="about-content__text">Né en Californie dans les années 1970, ce massage travaille sur l'enveloppe corporelle entière grâce à de longs effleurages enveloppants, des pressions douces et des mouvements fluides. Il permet de relâcher les tensions musculaires, d'apaiser le système nerveux et de favoriser un état de détente profonde.</p>
+            <p class="about-content__text">Idéal pour <strong>lâcher prise</strong>, retrouver de l'énergie, réduire le stress ou s'offrir un moment de douceur bien mérité.</p>
+            <ul style="margin:1.5rem 0;display:flex;flex-direction:column;gap:.6rem;list-style:none">
+              <li style="display:flex;gap:.75rem;font-size:.9rem;color:var(--text-mid);font-weight:300"><span style="color:var(--gold)">✓</span>Technique douce et enveloppante — corps entier</li>
+              <li style="display:flex;gap:.75rem;font-size:.9rem;color:var(--text-mid);font-weight:300"><span style="color:var(--gold)">✓</span>Huiles de massage bio fournies</li>
+              <li style="display:flex;gap:.75rem;font-size:.9rem;color:var(--text-mid);font-weight:300"><span style="color:var(--gold)">✓</span>Accessible à tous — aucune contre-indication particulière</li>
+            </ul>
+            <a href="tarifs.html" class="btn btn--primary">Voir les tarifs</a>
+          </div>
+          <div class="about-image-wrap fade-up">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=700&q=80" alt="Massage californien à l'huile" class="about-image" width="560" height="700" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LES 3 CONTEXTES -->
+    <section class="section tarifs-section" id="ou-je-me-deplace">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <p class="section-header__tag">Où j'interviens</p>
+          <h2 class="section-header__title">Je viens <em>partout à Lyon</em></h2>
+          <p class="section-header__subtitle">Domicile, bureau ou résidence — je m'adapte à votre lieu de vie.</p>
+        </header>
+        <div class="prestations-grid">
+          <article class="card-presta fade-up" id="domicile">
+            <span class="card-presta__icon">🏠</span>
+            <h3 class="card-presta__name">À votre domicile</h3>
+            <p class="card-presta__desc">Je me déplace chez vous avec tout le matériel : table professionnelle (ou futon), huiles bio, linge propre.</p>
+            <ul class="card-presta__list">
+              <li>Table · Fauteuil · Futon au choix</li>
+              <li>Prévoyez un espace 2m × 3m, calme et chauffé</li>
+              <li>Votre serviette personnelle</li>
+            </ul>
+            <span class="card-presta__tag">1h · 65 €</span>
+          </article>
+          <article class="card-presta fade-up" id="entreprise">
+            <span class="card-presta__icon">🏢</span>
+            <h3 class="card-presta__name">En entreprise</h3>
+            <p class="card-presta__desc">J'interviens dans vos locaux pour des séances de massage assis ou sur table pour vos collaborateurs.</p>
+            <ul class="card-presta__list">
+              <li>Sessions de 15 ou 30 min par personne</li>
+              <li>Réduit le stress, améliore la concentration</li>
+              <li>Tarif selon nombre de personnes</li>
+            </ul>
+            <span class="card-presta__tag">Sur devis</span>
+          </article>
+          <article class="card-presta fade-up" id="residence-ehpad">
+            <span class="card-presta__icon">🌸</span>
+            <h3 class="card-presta__name">Résidences & EHPAD</h3>
+            <p class="card-presta__desc">Soins adaptés aux personnes âgées, avec des gestes respectant la fragilité de la peau et la mobilité.</p>
+            <ul class="card-presta__list">
+              <li>Gestes doux adaptés aux seniors</li>
+              <li>Chaise, fauteuil ou table selon mobilité</li>
+              <li>15 min ou 30 min</li>
+            </ul>
+            <span class="card-presta__tag">À partir de 15 €</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DÉROULEMENT -->
+    <section class="section" id="deroulement">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <p class="section-header__tag">Déroulement</p>
+          <h2 class="section-header__title">Comment se passe <em>une séance à domicile</em></h2>
+        </header>
+        <ol class="steps-list fade-up">
+          <li class="step">
+            <div class="step__num">1</div>
+            <div><h3 class="step__title">Réservation & échange</h3><p class="step__text">Vous me contactez. Ensemble, nous convenons d'un créneau et je prends note de vos besoins spécifiques.</p></div>
+          </li>
+          <li class="step">
+            <div class="step__num">2</div>
+            <div><h3 class="step__title">J'arrive chez vous</h3><p class="step__text">J'arrive à l'heure convenue avec mon matériel complet. J'installe tout en quelques minutes.</p></div>
+          </li>
+          <li class="step">
+            <div class="step__num">3</div>
+            <div><h3 class="step__title">La séance</h3><p class="step__text">Après un court échange pour ajuster mes gestes, la séance commence. Je travaille à votre rythme.</p></div>
+          </li>
+          <li class="step">
+            <div class="step__num">4</div>
+            <div><h3 class="step__title">Après le soin</h3><p class="step__text">Prenez le temps de vous réinstaller doucement. Je vous recommande de boire un grand verre d'eau.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <p class="legal-mention" style="margin:0 auto 5rem;max-width:860px" role="note">Massage à but non thérapeutique, de relaxation et de bien-être uniquement.<br>Aucun caractère sexuel ou érotique. Merci de respecter mon travail.</p>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-section__title">Envie d'une <em>parenthèse de douceur</em> ?</h2>
+        <p class="cta-section__text">Prenez rendez-vous — je vous réponds rapidement.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--gold">Réserver ma séance</a>
+          <a href="tarifs.html" class="btn btn--outline-light">Voir les tarifs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div><a href="index.html" class="footer__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a><p class="footer__tagline">Léa, masseuse certifiée à Lyon. Domicile, entreprise, résidence.</p><p class="footer__mention">Massage à but non thérapeutique uniquement. Aucun caractère sexuel ou érotique.</p></div>
+        <div><p class="footer__col-title">Navigation</p><nav class="footer__nav"><a href="index.html" class="footer__nav-link">Accueil</a><a href="a-propos.html" class="footer__nav-link">À propos</a><a href="prestations.html" class="footer__nav-link">Prestations</a><a href="tarifs.html" class="footer__nav-link">Tarifs</a><a href="faq.html" class="footer__nav-link">FAQ</a><a href="contact.html" class="footer__nav-link">Contact</a></nav></div>
+        <div><p class="footer__col-title">Contact &amp; Horaires</p><address class="footer__contact" style="font-style:normal"><div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span><a href="tel:+33673323801">06.73.32.38.01</a></span></div><div class="footer__contact-item"><span class="footer__contact-icon">✉️</span><span><a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></span></div></address><div class="footer__hours" style="margin-top:1.5rem"><strong>Lun–Mer</strong> 14h→19h · <strong>Jeu–Ven</strong> 9h→19h<br><strong>Sam</strong> 8h→10h · <strong>Dim</strong> Fermé</div></div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Un cocon de joie</p>
+        <p class="footer__credit">Site créé par <a href="https://central-web-agency.com/index.html" target="_blank" rel="noopener">CWA · Central Web Agency</a></p>
+        <nav class="footer__legal"><a href="#" class="footer__legal-link">Mentions légales</a><a href="#" class="footer__legal-link">Confidentialité</a></nav>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

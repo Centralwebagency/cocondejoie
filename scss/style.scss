@@ -1,0 +1,12 @@
+// ============================================================
+// style.scss — Un cocon de joie · Fichier principal
+// Compiler : sass scss/style.scss css/style.css --watch
+// ============================================================
+
+// Fonts importées dans le HTML <head>
+
+@use 'variables';   // variables.$nom-variable
+@use 'base';        // reset, layout, boutons, animations
+@use 'nav';         // navigation desktop + mobile
+@use 'footer';      // pied de page
+@use 'components';  // hero, cards, tarifs, FAQ, contact...

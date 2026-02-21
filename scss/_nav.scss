@@ -1,0 +1,182 @@
+// ============================================================
+// _nav.scss — Navigation principale & menu mobile
+// ============================================================
+@use 'variables';
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  height: variables.$nav-h;
+  display: flex;
+  align-items: center;
+  transition: background variables.$trans-base, box-shadow variables.$trans-base;
+
+  &.is-scrolled {
+    background: variables.$terracotta-dark;
+    box-shadow: variables.$shadow-sm;
+  }
+
+  &--solid {
+    background: variables.$terracotta-dark;
+    position: relative;
+  }
+}
+
+.nav__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 variables.$s8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: variables.$bp-lg) { padding: 0 variables.$s5; }
+  @media (max-width: variables.$bp-md) { padding: 0 variables.$s4; }
+  @media (max-width: variables.$bp-sm) { padding: 0 variables.$s3; }
+}
+
+// ── LOGO ──
+.nav__logo {
+  font-family: variables.$font-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: variables.$text-on-dark;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    font-family: variables.$font-sans;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: variables.$gold;
+  }
+
+  &:hover { color: variables.$gold-light; }
+
+  @media (max-width: variables.$bp-sm) {
+    font-size: 1rem;
+    span { font-size: 0.58rem; }
+  }
+}
+
+// ── LIENS DESKTOP ──
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: variables.$s5;
+
+  @media (max-width: variables.$bp-lg) { display: none; }
+}
+
+.nav__link {
+  font-family: variables.$font-sans;
+  font-size: variables.$text-xs;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(variables.$text-on-dark, 0.78);
+  position: relative;
+  padding-bottom: 2px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 1px;
+    background: variables.$gold;
+    transition: width variables.$trans-base;
+  }
+
+  &:hover, &.is-active {
+    color: variables.$text-on-dark;
+    &::after { width: 100%; }
+  }
+
+  &.is-active { color: variables.$gold; }
+
+  &--cta {
+    background: variables.$gold;
+    color: variables.$terracotta-dark !important;
+    padding: 0.5rem 1.3rem;
+    font-weight: 500;
+    &::after { display: none !important; }
+    &:hover { background: variables.$gold-light; }
+  }
+}
+
+// ── HAMBURGER ──
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px; height: 36px;
+  padding: 4px;
+
+  @media (max-width: variables.$bp-lg) { display: flex; }
+
+  span {
+    display: block;
+    width: 100%; height: 1.5px;
+    background: variables.$text-on-dark;
+    transition: all variables.$trans-base;
+    transform-origin: center;
+  }
+
+  &.is-open {
+    span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  }
+}
+
+// ── MENU MOBILE ──
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 800;
+  background: variables.$terracotta-dark;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: variables.$s5;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+  &.is-open { transform: translateX(0); }
+}
+
+.mobile-menu__link {
+  font-family: variables.$font-serif;
+  font-style: italic;
+  font-size: clamp(1.8rem, 6vw, variables.$text-3xl);
+  color: variables.$text-on-dark;
+  transition: color variables.$trans-fast;
+  &:hover { color: variables.$gold; }
+}
+
+.mobile-menu__divider {
+  width: 40px; height: 1px;
+  background: rgba(variables.$gold, 0.35);
+}
+
+.mobile-menu__cta {
+  margin-top: variables.$s3;
+  background: variables.$gold;
+  color: variables.$terracotta-dark;
+  padding: 0.85rem 2.5rem;
+  font-family: variables.$font-sans;
+  font-size: variables.$text-xs;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background variables.$trans-fast;
+  &:hover { background: variables.$gold-light; }
+}

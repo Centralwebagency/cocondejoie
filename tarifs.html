@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarifs massage Lyon — À partir de 15 € · Un cocon de joie</title>
+  <meta name="description" content="Tarifs massage bien-être à Lyon : massage californien à domicile 65€/h, résidences/EHPAD 15–30€, entreprise sur devis. Espèces, PayPal, virement acceptés." />
+  <link rel="canonical" href="https://www.unconcondejoie.fr/tarifs.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+  <header>
+    <nav class="nav nav--solid" :class="{ 'is-scrolled': isScrolled }">
+      <div class="nav__container">
+        <a href="index.html" class="nav__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+          <li><a href="prestations.html" class="nav__link">Prestations</a></li>
+          <li><a href="tarifs.html" class="nav__link is-active">Tarifs</a></li>
+          <li><a href="faq.html" class="nav__link">FAQ</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta">Réserver</a></li>
+        </ul>
+        <button class="nav__hamburger" :class="{ 'is-open': menuOpen }" @click="toggleMenu" aria-label="Ouvrir le menu" :aria-expanded="String(menuOpen)"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <nav class="mobile-menu" :class="{ 'is-open': menuOpen }">
+      <a href="index.html" class="mobile-menu__link" @click="closeMenu">Accueil</a><div class="mobile-menu__divider"></div>
+      <a href="a-propos.html" class="mobile-menu__link" @click="closeMenu">À propos</a>
+      <a href="prestations.html" class="mobile-menu__link" @click="closeMenu">Prestations</a>
+      <a href="tarifs.html" class="mobile-menu__link" @click="closeMenu">Tarifs</a>
+      <a href="faq.html" class="mobile-menu__link" @click="closeMenu">FAQ</a>
+      <a href="contact.html" class="mobile-menu__cta" @click="closeMenu">Prendre rendez-vous</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container"><div class="page-hero__content">
+        <nav aria-label="Fil d'Ariane"><p class="breadcrumb"><a href="index.html">Accueil</a> <span>/</span> <span aria-current="page">Tarifs</span></p></nav>
+        <h1 class="page-hero__title">Mes <em>tarifs</em></h1>
+        <p class="page-hero__subtitle">Clairs, transparents et sans surprise</p>
+      </div></div>
+    </div>
+
+    <section class="section tarifs-section">
+      <div class="container" style="max-width:860px">
+
+        <article class="tarifs-block fade-up" id="tarifs-domicile">
+          <h2 class="tarifs-block__title">🏠 Massage <em>à domicile</em></h2>
+          <p class="tarifs-block__subtitle">Massage californien · Je me déplace chez vous à Lyon avec tout le matériel</p>
+          <table class="tarifs-table" aria-label="Tarifs massage à domicile">
+            <thead><tr><th scope="col">Prestation</th><th scope="col">Durée</th><th scope="col">Tarif</th></tr></thead>
+            <tbody>
+              <tr><td>Massage californien à domicile</td><td>1 heure</td><td>65 €</td></tr>
+            </tbody>
+          </table>
+          <p class="tarifs-note"><strong>Ce qui est inclus :</strong> déplacement à Lyon, table de massage professionnelle ou futon, huiles bio, linge propre. Prévoyez votre serviette personnelle et un espace calme d'environ 2m × 3m.</p>
+        </article>
+
+        <article class="tarifs-block fade-up" id="tarifs-residence">
+          <h2 class="tarifs-block__title">🌸 Résidences <em>& EHPAD</em></h2>
+          <p class="tarifs-block__subtitle">Soins adaptés aux personnes âgées · Gestes doux, postures adaptées</p>
+          <table class="tarifs-table" aria-label="Tarifs résidences et EHPAD">
+            <thead><tr><th scope="col">Prestation</th><th scope="col">Durée</th><th scope="col">Tarif</th></tr></thead>
+            <tbody>
+              <tr><td>Massage doux en résidence / EHPAD</td><td>15 minutes</td><td>15 €</td></tr>
+              <tr><td>Massage doux en résidence / EHPAD</td><td>30 minutes</td><td>30 €</td></tr>
+            </tbody>
+          </table>
+          <p class="tarifs-note">Massage sur chaise ou fauteuil si la table n'est pas adaptée. Gestes adaptés à la fragilité de la peau et à la mobilité de chaque résident.</p>
+        </article>
+
+        <article class="tarifs-block fade-up" id="tarifs-entreprise">
+          <h2 class="tarifs-block__title">🏢 Massage <em>en entreprise</em></h2>
+          <p class="tarifs-block__subtitle">Sessions bien-être pour vos collaborateurs · Tarif selon le nombre de personnes</p>
+          <table class="tarifs-table" aria-label="Tarifs massage en entreprise">
+            <thead><tr><th scope="col">Prestation</th><th scope="col">Durée</th><th scope="col">Tarif</th></tr></thead>
+            <tbody>
+              <tr><td>Massage assis / sur table en entreprise</td><td>15 min / personne</td><td>Sur devis</td></tr>
+            </tbody>
+          </table>
+          <p class="tarifs-note">Tarif établi selon le nombre de collaborateurs et la durée de l'intervention. Contactez-moi pour un devis personnalisé.</p>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:1.5rem">Demander un devis</a>
+        </article>
+
+        <div class="tarifs-block fade-up" style="background:var(--cream-dark);box-shadow:none;border:1px solid rgba(212,168,152,.35)">
+          <h2 class="tarifs-block__title" style="font-size:1.3rem">💳 Modes de paiement</h2>
+          <p style="font-size:.9rem;color:var(--text-mid);font-weight:300;margin-top:.5rem;margin-bottom:0">Règlement à la fin de chaque séance, sur place ou à distance.</p>
+          <div class="payment-badges">
+            <div class="payment-badge">💵 Espèces</div>
+            <div class="payment-badge">💙 PayPal</div>
+            <div class="payment-badge">🏦 Virement</div>
+          </div>
+        </div>
+
+        <p class="legal-mention" role="note">Massage à but non thérapeutique, de relaxation et de bien-être uniquement.<br>Aucun caractère sexuel ou érotique. Merci de respecter mon travail.</p>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-section__title">Prête à <em>réserver votre séance</em> ?</h2>
+        <p class="cta-section__text">Contactez-moi pour convenir d'un créneau.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--gold">Prendre rendez-vous</a>
+          <a href="faq.html" class="btn btn--outline-light">Questions fréquentes</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div><a href="index.html" class="footer__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a><p class="footer__tagline">Léa, masseuse certifiée à Lyon. Domicile, entreprise, résidence.</p><p class="footer__mention">Massage à but non thérapeutique uniquement. Aucun caractère sexuel ou érotique.</p></div>
+        <div><p class="footer__col-title">Navigation</p><nav class="footer__nav"><a href="index.html" class="footer__nav-link">Accueil</a><a href="a-propos.html" class="footer__nav-link">À propos</a><a href="prestations.html" class="footer__nav-link">Prestations</a><a href="tarifs.html" class="footer__nav-link">Tarifs</a><a href="faq.html" class="footer__nav-link">FAQ</a><a href="contact.html" class="footer__nav-link">Contact</a></nav></div>
+        <div><p class="footer__col-title">Contact &amp; Horaires</p><address class="footer__contact" style="font-style:normal"><div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span><a href="tel:+33673323801">06.73.32.38.01</a></span></div><div class="footer__contact-item"><span class="footer__contact-icon">✉️</span><span><a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></span></div></address><div class="footer__hours" style="margin-top:1.5rem"><strong>Lun–Mer</strong> 14h→19h · <strong>Jeu–Ven</strong> 9h→19h<br><strong>Sam</strong> 8h→10h · <strong>Dim</strong> Fermé</div></div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Un cocon de joie</p>
+        <p class="footer__credit">Site créé par <a href="https://central-web-agency.com/index.html" target="_blank" rel="noopener">CWA · Central Web Agency</a></p>
+        <nav class="footer__legal"><a href="#" class="footer__legal-link">Mentions légales</a><a href="#" class="footer__legal-link">Confidentialité</a></nav>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

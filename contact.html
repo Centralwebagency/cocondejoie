@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Réservation — Massage à domicile Lyon · Un cocon de joie</title>
+  <meta name="description" content="Réservez votre séance de massage bien-être à Lyon avec Léa. Contactez-moi par téléphone, email ou via le formulaire. Disponible lun-ven et samedi matin." />
+  <link rel="canonical" href="https://www.unconcondejoie.fr/contact.html" />
+  <meta property="og:title" content="Contact & Réservation — Un cocon de joie · Lyon" />
+  <meta property="og:description" content="Réservez votre séance de massage bien-être à domicile à Lyon. Je vous réponds rapidement." />
+  <meta property="og:url" content="https://www.unconcondejoie.fr/contact.html" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav nav--solid" :class="{ 'is-scrolled': isScrolled }">
+      <div class="nav__container">
+        <a href="index.html" class="nav__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+          <li><a href="prestations.html" class="nav__link">Prestations</a></li>
+          <li><a href="tarifs.html" class="nav__link">Tarifs</a></li>
+          <li><a href="faq.html" class="nav__link">FAQ</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta is-active">Réserver</a></li>
+        </ul>
+        <button class="nav__hamburger" :class="{ 'is-open': menuOpen }" @click="toggleMenu" aria-label="Ouvrir le menu" :aria-expanded="String(menuOpen)">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <nav class="mobile-menu" :class="{ 'is-open': menuOpen }" aria-label="Navigation mobile">
+      <a href="index.html" class="mobile-menu__link" @click="closeMenu">Accueil</a>
+      <div class="mobile-menu__divider"></div>
+      <a href="a-propos.html" class="mobile-menu__link" @click="closeMenu">À propos</a>
+      <a href="prestations.html" class="mobile-menu__link" @click="closeMenu">Prestations</a>
+      <a href="tarifs.html" class="mobile-menu__link" @click="closeMenu">Tarifs</a>
+      <a href="faq.html" class="mobile-menu__link" @click="closeMenu">FAQ</a>
+      <a href="contact.html" class="mobile-menu__cta" @click="closeMenu">Prendre rendez-vous</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero__content">
+          <nav aria-label="Fil d'Ariane">
+            <p class="breadcrumb"><a href="index.html">Accueil</a> <span aria-hidden="true">/</span> <span aria-current="page">Contact</span></p>
+          </nav>
+          <h1 class="page-hero__title">Prenez <em>rendez-vous</em></h1>
+          <p class="page-hero__subtitle">Je vous réponds dans les meilleurs délais · Lyon</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION PRINCIPALE -->
+    <section class="section" aria-label="Formulaire et informations de contact">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- INFO CONTACT -->
+          <div class="fade-up">
+            <p class="section-header__tag">Me contacter</p>
+            <h2 class="contact-info__title">Réservez votre<br><em>moment de bien-être</em></h2>
+            <p class="contact-info__text">N'hésitez pas à me contacter par le moyen qui vous convient le mieux — téléphone, email ou formulaire. Je vous réponds rapidement pour convenir ensemble du créneau idéal.</p>
+
+            <address class="contact-details" style="font-style:normal">
+
+              <div class="contact-detail">
+                <div class="contact-detail__icon" aria-hidden="true">📍</div>
+                <div>
+                  <span class="contact-detail__label">Secteur d'intervention</span>
+                  <p class="contact-detail__value">Lyon et agglomération<br><small style="font-size:.82rem;color:var(--text-light)">Domicile · Entreprise · Résidence / EHPAD</small></p>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-detail__icon" aria-hidden="true">📞</div>
+                <div>
+                  <span class="contact-detail__label">Téléphone</span>
+                  <p class="contact-detail__value"><a href="tel:+33673323801">06.73.32.38.01</a></p>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-detail__icon" aria-hidden="true">✉️</div>
+                <div>
+                  <span class="contact-detail__label">Email</span>
+                  <p class="contact-detail__value"><a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></p>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-detail__icon" aria-hidden="true">🕐</div>
+                <div>
+                  <span class="contact-detail__label">Disponibilités</span>
+                  <div class="contact-detail__value">
+                    <p style="margin:0">Lun – Mer : 14h → 19h</p>
+                    <p style="margin:0">Jeu – Ven : 9h → 19h</p>
+                    <p style="margin:0">Samedi : 8h → 10h</p>
+                    <p style="margin:0;color:var(--text-light)">Dimanche : fermé</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-detail__icon" aria-hidden="true">💳</div>
+                <div>
+                  <span class="contact-detail__label">Modes de paiement</span>
+                  <p class="contact-detail__value">Espèces · PayPal · Virement bancaire</p>
+                </div>
+              </div>
+
+            </address>
+          </div>
+
+          <!-- FORMULAIRE -->
+          <div class="fade-up">
+            <form class="form" @submit.prevent="submitForm" novalidate aria-label="Formulaire de contact">
+
+              <!-- HONEYPOT : champ invisible pour bloquer les bots -->
+              <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+                <label for="_honey">Ne pas remplir</label>
+                <input id="_honey" v-model="form._honey" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prenom" class="form-label">Prénom *</label>
+                  <input id="prenom" v-model="form.prenom" type="text" class="form-input" :class="{ 'is-error': formErrors.prenom }" placeholder="Marie" autocomplete="given-name" required />
+                  <span v-if="formErrors.prenom" class="form-error-msg">{{ formErrors.prenom }}</span>
+                </div>
+                <div class="form-group">
+                  <label for="nom" class="form-label">Nom *</label>
+                  <input id="nom" v-model="form.nom" type="text" class="form-input" :class="{ 'is-error': formErrors.nom }" placeholder="Dupont" autocomplete="family-name" required />
+                  <span v-if="formErrors.nom" class="form-error-msg">{{ formErrors.nom }}</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email *</label>
+                <input id="email" v-model="form.email" type="email" class="form-input" :class="{ 'is-error': formErrors.email }" placeholder="marie@exemple.fr" autocomplete="email" required />
+                <span v-if="formErrors.email" class="form-error-msg">{{ formErrors.email }}</span>
+              </div>
+
+              <div class="form-group">
+                <label for="telephone" class="form-label">Téléphone</label>
+                <input id="telephone" v-model="form.telephone" type="tel" class="form-input" placeholder="06 XX XX XX XX" autocomplete="tel" />
+              </div>
+
+              <div class="form-group">
+                <label for="type" class="form-label">Type de soin *</label>
+                <select id="type" v-model="form.type" class="form-select" :class="{ 'is-error': formErrors.type }" required>
+                  <option value="" disabled>— Sélectionner —</option>
+                  <option>Massage californien à domicile (1h · 65 €)</option>
+                  <option>Massage en résidence / EHPAD (15 min · 15 €)</option>
+                  <option>Massage en résidence / EHPAD (30 min · 30 €)</option>
+                  <option>Massage en entreprise (devis)</option>
+                  <option>Autre / Question</option>
+                </select>
+                <span v-if="formErrors.type" class="form-error-msg">{{ formErrors.type }}</span>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" v-model="form.message" class="form-textarea" placeholder="Vos disponibilités, besoins particuliers, questions…" rows="4"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary" :disabled="formSubmitting" :style="formSubmitting ? 'opacity:.7;cursor:not-allowed' : ''">
+                <span v-if="!formSubmitting">Envoyer ma demande</span>
+                <span v-else>Envoi en cours…</span>
+              </button>
+
+              <p class="form-note">* Champs obligatoires — vos données sont transmises de façon sécurisée et ne sont jamais revendues.</p>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ RAPIDE -->
+    <section class="section tarifs-section" aria-label="Questions rapides">
+      <div class="container" style="max-width:860px">
+        <header class="section-header section-header--center">
+          <p class="section-header__tag">Avant de réserver</p>
+          <h2 class="section-header__title">Questions <em>fréquentes</em></h2>
+        </header>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+          <div style="background:white;padding:2rem;border:1px solid rgba(212,168,152,.4)">
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;margin-bottom:.75rem;color:var(--terracotta)">Que dois-je prévoir ?</h3>
+            <p style="font-size:.88rem;color:var(--text-mid);font-weight:300;line-height:1.8;margin:0">Un espace calme (≈ 2m × 3m), chauffé, et votre serviette personnelle. Je m'occupe du reste.</p>
+          </div>
+          <div style="background:white;padding:2rem;border:1px solid rgba(212,168,152,.4)">
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;margin-bottom:.75rem;color:var(--terracotta)">Comment se règle la séance ?</h3>
+            <p style="font-size:.88rem;color:var(--text-mid);font-weight:300;line-height:1.8;margin:0">À la fin de la séance, en espèces, PayPal ou virement bancaire.</p>
+          </div>
+          <div style="background:white;padding:2rem;border:1px solid rgba(212,168,152,.4)">
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;margin-bottom:.75rem;color:var(--terracotta)">Intervenez-vous partout à Lyon ?</h3>
+            <p style="font-size:.88rem;color:var(--text-mid);font-weight:300;line-height:1.8;margin:0">Oui, Lyon et agglomération. Contactez-moi pour vérifier votre secteur.</p>
+          </div>
+          <div style="background:white;padding:2rem;border:1px solid rgba(212,168,152,.4)">
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;margin-bottom:.75rem;color:var(--terracotta)">Puis-je annuler mon rendez-vous ?</h3>
+            <p style="font-size:.88rem;color:var(--text-mid);font-weight:300;line-height:1.8;margin:0">Bien sûr, merci de me prévenir au moins 24h à l'avance par téléphone ou email.</p>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem">
+          <a href="faq.html" class="btn btn--outline">Toutes les questions</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="footer__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+          <p class="footer__tagline">Léa, masseuse certifiée à Lyon. Je me déplace à votre domicile, en entreprise ou en résidence pour des soins personnalisés, en douceur.</p>
+          <p class="footer__mention">Massage à but non thérapeutique, de relaxation et de bien-être uniquement. Aucun caractère sexuel ou érotique. Merci de respecter mon travail.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigation</p>
+          <nav class="footer__nav" aria-label="Navigation secondaire">
+            <a href="index.html" class="footer__nav-link">Accueil</a>
+            <a href="a-propos.html" class="footer__nav-link">À propos de Léa</a>
+            <a href="prestations.html" class="footer__nav-link">Prestations</a>
+            <a href="tarifs.html" class="footer__nav-link">Tarifs</a>
+            <a href="faq.html" class="footer__nav-link">FAQ</a>
+            <a href="contact.html" class="footer__nav-link">Prendre rendez-vous</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact &amp; Horaires</p>
+          <address class="footer__contact" style="font-style:normal">
+            <div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span><a href="tel:+33673323801">06.73.32.38.01</a></span></div>
+            <div class="footer__contact-item"><span class="footer__contact-icon">✉️</span><span><a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></span></div>
+            <div class="footer__contact-item"><span class="footer__contact-icon">📍</span><span>Lyon et agglomération</span></div>
+          </address>
+          <div class="footer__hours">
+            <strong>Lun – Mer</strong> 14h → 19h<br>
+            <strong>Jeu – Ven</strong> 9h → 19h<br>
+            <strong>Samedi</strong> 8h → 10h<br>
+            <strong>Dimanche</strong> Fermé
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Un cocon de joie · Tous droits réservés</p>
+        <p class="footer__credit">Site créé par <a href="https://central-web-agency.com/index.html" target="_blank" rel="noopener">CWA · Central Web Agency</a></p>
+        <nav class="footer__legal" aria-label="Liens légaux">
+          <a href="#" class="footer__legal-link">Mentions légales</a>
+          <a href="#" class="footer__legal-link">Confidentialité</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" :class="{ 'is-visible': toastVisible, 'toast--error': toastError }" role="alert" aria-live="polite">
+    {{ toastMessage }}
+  </div>
+
+</div><!-- #app -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

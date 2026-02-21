@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Questions fréquentes massage à domicile Lyon · Un cocon de joie</title>
+  <meta name="description" content="Toutes vos questions sur le massage californien à domicile, en entreprise ou en résidence à Lyon. Comment ça se passe, modes de paiement, massages seniors, contre-indications." />
+  <link rel="canonical" href="https://www.unconcondejoie.fr/faq.html" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Le massage californien, c'est quoi ?","acceptedAnswer":{"@type":"Answer","text":"Un massage à l'huile, très doux et enveloppant, idéal pour lâcher prise."}},{"@type":"Question","name":"Comment se passe un massage à domicile ?","acceptedAnswer":{"@type":"Answer","text":"J'apporte table de massage, huiles bio et linge propre. Prévoyez un espace calme, chauffé, et votre serviette personnelle."}},{"@type":"Question","name":"Quels modes de paiement ?","acceptedAnswer":{"@type":"Answer","text":"Espèces, PayPal ou virement bancaire."}},{"@type":"Question","name":"Massez-vous les personnes âgées en résidence ?","acceptedAnswer":{"@type":"Answer","text":"Oui, avec des gestes adaptés. Possible sur chaise ou fauteuil."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+  <header>
+    <nav class="nav nav--solid" :class="{ 'is-scrolled': isScrolled }">
+      <div class="nav__container">
+        <a href="index.html" class="nav__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+          <li><a href="prestations.html" class="nav__link">Prestations</a></li>
+          <li><a href="tarifs.html" class="nav__link">Tarifs</a></li>
+          <li><a href="faq.html" class="nav__link is-active">FAQ</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta">Réserver</a></li>
+        </ul>
+        <button class="nav__hamburger" :class="{ 'is-open': menuOpen }" @click="toggleMenu" aria-label="Ouvrir le menu" :aria-expanded="String(menuOpen)">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <nav class="mobile-menu" :class="{ 'is-open': menuOpen }" aria-label="Navigation mobile">
+      <a href="index.html" class="mobile-menu__link" @click="closeMenu">Accueil</a>
+      <div class="mobile-menu__divider"></div>
+      <a href="a-propos.html" class="mobile-menu__link" @click="closeMenu">À propos</a>
+      <a href="prestations.html" class="mobile-menu__link" @click="closeMenu">Prestations</a>
+      <a href="tarifs.html" class="mobile-menu__link" @click="closeMenu">Tarifs</a>
+      <a href="faq.html" class="mobile-menu__link" @click="closeMenu">FAQ</a>
+      <a href="contact.html" class="mobile-menu__cta" @click="closeMenu">Prendre rendez-vous</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero__content">
+          <nav aria-label="Fil d'Ariane"><p class="breadcrumb"><a href="index.html">Accueil</a> <span>/</span> <span aria-current="page">FAQ</span></p></nav>
+          <h1 class="page-hero__title">Questions <em>fréquentes</em></h1>
+          <p class="page-hero__subtitle">Tout savoir avant votre première séance</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" aria-label="Questions et réponses">
+      <div class="container">
+        <dl class="faq-list">
+
+          <div class="faq-item">
+            <dt><button class="faq-item__trigger" @click="toggleFaq(0)" :aria-expanded="String(isFaqOpen(0))" aria-controls="faq-0">Le massage californien, c'est quoi exactement ?<span class="faq-item__icon" aria-hidden="true">+</span></button></dt>
+            <dd class="faq-item__body" :class="{ 'is-open': isFaqOpen(0) }" id="faq-0">
+              <div class="faq-item__body-inner"><div class="faq-item__answer">
+                <p>Le massage californien est un massage à l'huile, <strong>très doux et enveloppant</strong>, idéal pour lâcher prise. Né en Californie dans les années 1970, il repose sur de longs effleurages qui englobent tout le corps, des pressions légères et des mouvements fluides et rythmés.</p>
+                <p>Il agit sur le corps (relâchement musculaire, meilleure circulation) et sur l'esprit (apaisement du système nerveux, réduction du stress). Accessible à tous, sans contre-indication particulière.</p>
+              </div></div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt><button class="faq-item__trigger" @click="toggleFaq(1)" :aria-expanded="String(isFaqOpen(1))" aria-controls="faq-1">Comment se passe un massage à domicile ?<span class="faq-item__icon" aria-hidden="true">+</span></button></dt>
+            <dd class="faq-item__body" :class="{ 'is-open': isFaqOpen(1) }" id="faq-1">
+              <div class="faq-item__body-inner"><div class="faq-item__answer">
+                <p>J'apporte tout le matériel nécessaire : <strong>table de massage professionnelle</strong> (ou futon selon votre préférence), mes <strong>huiles bio</strong> et mon <strong>linge propre</strong>.</p>
+                <p>De votre côté, prévoyez :<ul><li>Un espace calme et chauffé d'environ <strong>2m × 3m</strong></li><li>Votre serviette personnelle</li></ul></p>
+                <p>J'installe tout en quelques minutes puis nous échangeons brièvement pour adapter la séance à vos besoins du moment.</p>
+              </div></div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt><button class="faq-item__trigger" @click="toggleFaq(2)" :aria-expanded="String(isFaqOpen(2))" aria-controls="faq-2">Dois-je me déshabiller pour le massage ?<span class="faq-item__icon" aria-hidden="true">+</span></button></dt>
+            <dd class="faq-item__body" :class="{ 'is-open': isFaqOpen(2) }" id="faq-2">
+              <div class="faq-item__body-inner"><div class="faq-item__answer">
+                <p>Le massage californien se pratique <strong>en sous-vêtements</strong> (ou maillot de bain). Vous êtes toujours recouvert(e) d'un drap propre — seule la zone en cours de massage est découverte. Votre pudeur et votre confort sont ma priorité.</p>
+              </div></div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt><button class="faq-item__trigger" @click="toggleFaq(3)" :aria-expanded="String(isFaqOpen(3))" aria-controls="faq-3">Combien de temps dure une séance ?<span class="faq-item__icon" aria-hidden="true">+</span></button></dt>
+            <dd class="faq-item__body" :class="{ 'is-open': isFaqOpen(3) }" id="faq-3">
+              <div class="faq-item__body-inner"><div class="faq-item__answer">
+                <p>La séance à domicile dure <strong>1 heure (65 €)</strong>. Pour les résidences et EHPAD : <strong>15 min (15 €)</strong> ou <strong>30 min (30 €)</strong>. Pour les entreprises, la durée est définie selon votre organisation.</p>
+              </div></div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt><button class="faq-item__trigger" @click="toggleFaq(4)" :aria-expanded="String(isFaqOpen(4))" aria-controls="faq-4">Quels modes de paiement acceptez-vous ?<span class="faq-item__icon" aria-hidden="true">+</span></button></dt>
+            <dd class="faq-item__body" :class="{ 'is-open': isFaqOpen(4) }" id="faq-4">
+              <div class="faq-item__body-inner"><div class="faq-item__answer">
+                <p>Règlement à la fin de chaque séance :</p>
+                <ul><li>💵 <strong>Espèces</strong></li><li>💙 <strong>PayPal</strong></li><li>🏦 <strong>Virement bancaire</strong></li></ul>
+              </div></div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt><button class="faq-item__trigger" @click="toggleFaq(5)" :aria-expanded="String(isFaqOpen(5))" aria-controls="faq-5">Massez-vous les personnes âgées en résidence ?<span class="faq-item__icon" aria-hidden="true">+</span></button></dt>
+            <dd class="faq-item__body" :class="{ 'is-open': isFaqOpen(5) }" id="faq-5">
+              <div class="faq-item__body-inner"><div class="faq-item__answer">
+                <p>Oui, tout à fait. J'adapte mes gestes à <strong>la fragilité de la peau et à la mobilité</strong> de chaque personne senior. Le massage peut se faire sur chaise ou fauteuil si la table n'est pas adaptée.</p>
+              </div></div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt><button class="faq-item__trigger" @click="toggleFaq(6)" :aria-expanded="String(isFaqOpen(6))" aria-controls="faq-6">Intervenez-vous dans toute la région lyonnaise ?<span class="faq-item__icon" aria-hidden="true">+</span></button></dt>
+            <dd class="faq-item__body" :class="{ 'is-open': isFaqOpen(6) }" id="faq-6">
+              <div class="faq-item__body-inner"><div class="faq-item__answer">
+                <p>J'interviens à Lyon et dans l'<strong>agglomération lyonnaise</strong>. Contactez-moi pour vérifier si votre secteur est couvert.</p>
+              </div></div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt><button class="faq-item__trigger" @click="toggleFaq(7)" :aria-expanded="String(isFaqOpen(7))" aria-controls="faq-7">Y a-t-il des contre-indications ?<span class="faq-item__icon" aria-hidden="true">+</span></button></dt>
+            <dd class="faq-item__body" :class="{ 'is-open': isFaqOpen(7) }" id="faq-7">
+              <div class="faq-item__body-inner"><div class="faq-item__answer">
+                <p>Contre-indiqué en cas de fièvre, inflammation aiguë, plaies ouvertes, maladies contagieuses. En cas de doute, consultez votre médecin. Mon activité est un <strong>massage à but non thérapeutique</strong>, de relaxation et de bien-être uniquement.</p>
+              </div></div>
+            </dd>
+          </div>
+
+        </dl>
+        <p class="legal-mention" role="note">Massage à but non thérapeutique, de relaxation et de bien-être uniquement.<br>Aucun caractère sexuel ou érotique. Merci de respecter mon travail.</p>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-label="Réserver">
+      <div class="container">
+        <h2 class="cta-section__title">D'autres <em>questions</em> ?</h2>
+        <p class="cta-section__text">Contactez-moi directement — je vous réponds avec plaisir.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn--gold">Me contacter</a>
+          <a href="tel:+33673323801" class="btn btn--outline-light">06.73.32.38.01</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="footer__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+          <p class="footer__tagline">Léa, masseuse certifiée à Lyon. Domicile, entreprise, résidence.</p>
+          <p class="footer__mention">Massage à but non thérapeutique uniquement. Aucun caractère sexuel ou érotique.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigation</p>
+          <nav class="footer__nav"><a href="index.html" class="footer__nav-link">Accueil</a><a href="a-propos.html" class="footer__nav-link">À propos</a><a href="prestations.html" class="footer__nav-link">Prestations</a><a href="tarifs.html" class="footer__nav-link">Tarifs</a><a href="faq.html" class="footer__nav-link">FAQ</a><a href="contact.html" class="footer__nav-link">Contact</a></nav>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <address class="footer__contact" style="font-style:normal">
+            <div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span><a href="tel:+33673323801">06.73.32.38.01</a></span></div>
+            <div class="footer__contact-item"><span class="footer__contact-icon">✉️</span><span><a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></span></div>
+          </address>
+          <div class="footer__hours" style="margin-top:1.5rem"><strong>Lun–Mer</strong> 14h→19h · <strong>Jeu–Ven</strong> 9h→19h<br><strong>Sam</strong> 8h→10h · <strong>Dim</strong> Fermé</div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Un cocon de joie</p>
+        <p class="footer__credit">Site créé par <a href="https://central-web-agency.com/index.html" target="_blank" rel="noopener">CWA · Central Web Agency</a></p>
+        <nav class="footer__legal"><a href="#" class="footer__legal-link">Mentions légales</a><a href="#" class="footer__legal-link">Confidentialité</a></nav>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
