@@ -1812,4 +1812,167 @@ p:last-child {
   padding: 0.6rem 1.5rem;
   background: #FFFFFF;
   border: 1px solid rgba(212, 168, 152, 0.5);
+}
+
+.legal-page {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.legal-date {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: #9A7060;
+  font-style: italic;
+  background: rgba(212, 168, 152, 0.2);
+  border-left: 3px solid #C8A46A;
+  padding: 0.5rem 1rem;
+  margin-bottom: 4rem;
+}
+
+.legal-page h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.4rem;
+  color: #8C5E4E;
+  margin: 4rem 0 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(212, 168, 152, 0.5);
+}
+.legal-page h2:first-of-type {
+  margin-top: 0;
+}
+@media (max-width: 480px) {
+  .legal-page h2 {
+    font-size: 1.15rem;
+  }
+}
+
+.legal-page h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.15rem;
+  color: #2C1A12;
+  margin: 2rem 0 1rem;
+}
+
+.legal-page p {
+  font-size: 1rem;
+  color: #5C3D2E;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+
+.legal-page ul,
+.legal-page ol {
+  margin: 1rem 0 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.legal-page ul {
+  list-style: disc;
+}
+
+.legal-page ol {
+  list-style: decimal;
+}
+
+.legal-page li {
+  font-size: 1rem;
+  color: #5C3D2E;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.legal-page strong {
+  font-weight: 400;
+  color: #2C1A12;
+}
+
+.legal-page a {
+  color: #8C5E4E;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.legal-page a:hover {
+  color: #6A3F31;
+}
+
+.legal-info-box {
+  background: #FFFFFF;
+  border: 1px solid rgba(212, 168, 152, 0.5);
+  padding: 2.5rem 3rem;
+  margin: 2rem 0 2.5rem;
+}
+.legal-info-box p {
+  margin-bottom: 0.5rem;
+}
+.legal-info-box p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 480px) {
+  .legal-info-box {
+    padding: 2rem;
+  }
+}
+
+.legal-tarifs {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.legal-tarifs th {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9A7060;
+  padding: 0 1rem 1rem 0;
+  text-align: left;
+  border-bottom: 1.5px solid rgba(212, 168, 152, 0.5);
+}
+
+.legal-tarifs td {
+  padding: 1.5rem 1rem 1.5rem 0;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #5C3D2E;
+  border-bottom: 1px solid rgba(212, 168, 152, 0.25);
+}
+
+.legal-tarifs td:first-child {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #2C1A12;
+}
+
+.legal-tarifs td:last-child {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.4rem;
+  color: #8C5E4E;
+  text-align: right;
+}
+
+.legal-tarifs tr:last-child td {
+  border-bottom: none;
+}
+
+.legal-alert {
+  background: rgba(212, 168, 152, 0.2);
+  border-left: 3px solid #8C5E4E;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  font-size: 0.85rem;
+  color: #5C3D2E;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.legal-alert strong {
+  color: #8C5E4E;
+}
+@media (max-width: 480px) {
+  .legal-alert {
+    padding: 1.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */

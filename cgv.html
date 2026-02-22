@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <title>CGV — Conditions Générales de Vente · Un cocon de joie · Lyon</title>
+  <meta name="description" content="Conditions générales de vente applicables aux prestations de massage bien-être à domicile proposées par Un cocon de joie à Lyon." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+
+  <header>
+    <nav class="nav nav--solid" :class="{ 'is-scrolled': isScrolled }">
+      <div class="nav__container">
+        <a href="index.html" class="nav__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+          <li><a href="prestations.html" class="nav__link">Prestations</a></li>
+          <li><a href="tarifs.html" class="nav__link">Tarifs</a></li>
+          <li><a href="faq.html" class="nav__link">FAQ</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta">Réserver</a></li>
+        </ul>
+        <button class="nav__hamburger" :class="{ 'is-open': menuOpen }" @click="toggleMenu" aria-label="Ouvrir le menu" :aria-expanded="String(menuOpen)">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <nav class="mobile-menu" :class="{ 'is-open': menuOpen }">
+      <a href="index.html" class="mobile-menu__link" @click="closeMenu">Accueil</a>
+      <div class="mobile-menu__divider"></div>
+      <a href="a-propos.html" class="mobile-menu__link" @click="closeMenu">À propos</a>
+      <a href="prestations.html" class="mobile-menu__link" @click="closeMenu">Prestations</a>
+      <a href="tarifs.html" class="mobile-menu__link" @click="closeMenu">Tarifs</a>
+      <a href="faq.html" class="mobile-menu__link" @click="closeMenu">FAQ</a>
+      <a href="contact.html" class="mobile-menu__cta" @click="closeMenu">Prendre rendez-vous</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero__content">
+          <nav aria-label="Fil d'Ariane">
+            <p class="breadcrumb"><a href="index.html">Accueil</a> <span>/</span> <span aria-current="page">CGV</span></p>
+          </nav>
+          <h1 class="page-hero__title">Conditions Générales <em>de Vente</em></h1>
+          <p class="page-hero__subtitle">Applicables à toutes les prestations Un cocon de joie</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="legal-page">
+
+          <p class="legal-date">Dernière mise à jour : février 2025 — Version 1.0</p>
+
+          <h2>1. Identification du prestataire</h2>
+          <div class="legal-info-box">
+            <p><strong>Nom commercial :</strong> Un cocon de joie</p>
+            <p><strong>Prestataire :</strong> Léa [Nom de famille à compléter]</p>
+            <p><strong>Statut :</strong> Entrepreneur individuel (micro-entreprise)</p>
+            <p><strong>SIRET :</strong> [À compléter]</p>
+            <p><strong>TVA :</strong> Non assujettie — TVA non applicable, art. 293 B du CGI</p>
+            <p><strong>Zone d'intervention :</strong> Lyon et agglomération lyonnaise (69)</p>
+            <p><strong>Téléphone :</strong> <a href="tel:+33673323801">06.73.32.38.01</a></p>
+            <p><strong>Email :</strong> <a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></p>
+          </div>
+
+          <h2>2. Objet & champ d'application</h2>
+          <p>Les présentes Conditions Générales de Vente (ci-après « CGV ») régissent l'ensemble des prestations de massage bien-être proposées par <strong>Un cocon de joie</strong>, qu'elles soient réalisées à domicile, en entreprise ou en résidence / EHPAD.</p>
+          <p>Toute prise de rendez-vous, qu'elle soit effectuée par téléphone, email ou formulaire en ligne, vaut <strong>acceptation pleine et entière</strong> des présentes CGV. Le client déclare en avoir pris connaissance préalablement à la réservation.</p>
+          <p>Ces CGV prévalent sur tout autre document, sauf accord écrit contraire signé par les deux parties.</p>
+
+          <h2>3. Nature des prestations</h2>
+          <div class="legal-alert">
+            <strong>Avertissement important :</strong> Les massages proposés par Un cocon de joie sont des massages à but <strong>exclusivement non thérapeutique</strong>, de relaxation et de bien-être. Ils ne constituent pas des actes médicaux, paramédicaux, de kinésithérapie ou d'ostéopathie et ne sauraient se substituer à un traitement ou suivi médical. En cas de doute sur une contre-indication, le client est invité à consulter son médecin avant toute séance.
+          </div>
+          <p>Ces prestations <strong>n'ont aucun caractère sexuel ou érotique</strong>. Toute demande, remarque ou comportement à caractère sexuel entraîne l'arrêt immédiat et définitif de la séance. Le tarif intégral de la prestation reste dû.</p>
+
+          <h2>4. Tarifs</h2>
+          <p>Tous les prix sont exprimés en euros (<strong>€ TTC</strong>). TVA non applicable — article 293 B du Code Général des Impôts.</p>
+
+          <table class="legal-tarifs">
+            <thead>
+              <tr>
+                <th>Prestation</th>
+                <th>Durée</th>
+                <th>Tarif</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Massage californien à domicile</td>
+                <td>1 heure</td>
+                <td>65 €</td>
+              </tr>
+              <tr>
+                <td>Massage en résidence / EHPAD</td>
+                <td>15 minutes</td>
+                <td>15 €</td>
+              </tr>
+              <tr>
+                <td>Massage en résidence / EHPAD</td>
+                <td>30 minutes</td>
+                <td>30 €</td>
+              </tr>
+              <tr>
+                <td>Massage en entreprise</td>
+                <td>Variable</td>
+                <td>Sur devis</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Les tarifs sont susceptibles d'être modifiés à tout moment. Le tarif applicable est celui en vigueur au moment de la confirmation de la réservation, communiqué au client par email ou par téléphone.</p>
+
+          <h2>5. Réservation & confirmation</h2>
+          <p>La réservation s'effectue :</p>
+          <ul>
+            <li>Par téléphone au <a href="tel:+33673323801">06.73.32.38.01</a></li>
+            <li>Par email à <a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></li>
+            <li>Via le formulaire de contact du site</li>
+          </ul>
+          <p>La réservation est considérée comme <strong>ferme et définitive</strong> dès confirmation mutuelle d'un créneau horaire et de l'adresse d'intervention par les deux parties. Aucun acompte n'est exigé pour les prestations à domicile.</p>
+          <p>Pour les prestations en entreprise impliquant plusieurs collaborateurs, un devis préalable est établi. La commande est confirmée à la signature ou à la validation écrite du devis par le client.</p>
+
+          <h2>6. Modalités de paiement</h2>
+          <p>Le règlement s'effectue <strong>à la fin de chaque séance</strong>, en main propre ou à distance, selon les modes suivants :</p>
+          <ul>
+            <li><strong>Espèces</strong> (dans la limite légale en vigueur)</li>
+            <li><strong>PayPal</strong> (lien de paiement envoyé à l'issue de la séance)</li>
+            <li><strong>Virement bancaire</strong> (coordonnées communiquées sur demande)</li>
+          </ul>
+          <p>Les chèques ne sont pas acceptés. Le non-paiement à l'issue de la séance pourra donner lieu à des relances puis, le cas échéant, à des poursuites judiciaires.</p>
+
+          <h2>7. Annulation, report & absence</h2>
+
+          <h3>7.1 Annulation par le client</h3>
+          <p>Toute annulation doit être notifiée par téléphone ou email dans les délais suivants :</p>
+          <ul>
+            <li><strong>Plus de 24 heures avant la séance :</strong> annulation sans frais</li>
+            <li><strong>Moins de 24 heures avant la séance :</strong> 50 % du tarif de la prestation peut être facturé</li>
+            <li><strong>Absence sans notification préalable (lapin) :</strong> 100 % du tarif est dû</li>
+          </ul>
+          <p>En cas de force majeure dûment justifiée (hospitalisation, accident), aucune facturation ne sera appliquée et la séance sera reportée à une date convenue mutuellement.</p>
+
+          <h3>7.2 Annulation par le prestataire</h3>
+          <p>Un cocon de joie se réserve le droit d'annuler ou reporter une prestation en cas de force majeure (maladie, accident, conditions météorologiques exceptionnelles). Le client sera prévenu dans les meilleurs délais. La séance annulée sera reportée sans frais supplémentaires à une date convenue d'un commun accord. Aucune indemnité ne sera due de part et d'autre.</p>
+
+          <h2>8. Obligations du client</h2>
+          <p>Le client s'engage à :</p>
+          <ul>
+            <li>Signaler avant toute séance tout problème de santé, pathologie, allergie ou traitement médical en cours susceptible de constituer une contre-indication</li>
+            <li>Prévoir, pour les séances à domicile, un espace libre d'environ <strong>2m × 3m minimum</strong>, propre, calme et chauffé (18°C minimum)</li>
+            <li>Être présent et disponible à l'heure convenue</li>
+            <li>Respecter le caractère professionnel, non médical et non sexuel de la prestation</li>
+            <li>Régler la prestation à l'issue de la séance selon les modalités prévues</li>
+          </ul>
+
+          <h2>9. Conditions d'intervention à domicile</h2>
+          <p>Le prestataire se déplace à l'adresse communiquée lors de la réservation, dans la <strong>zone d'intervention définie</strong> (Lyon et agglomération lyonnaise). Le matériel nécessaire à la séance (table ou futon de massage, huiles bio, linge propre) est entièrement fourni par le prestataire.</p>
+          <p>Le client doit s'assurer que l'accès au logement est possible à l'heure convenue. En cas d'impossibilité d'accès imputable au client (interphone défaillant, adresse erronée, absence sans prévenir), la séance sera considérée comme effectuée et son montant intégral restera dû.</p>
+
+          <h2>10. Responsabilité du prestataire</h2>
+          <p>Un cocon de joie s'engage à réaliser ses prestations avec tout le soin et le professionnalisme requis, dans le strict respect des techniques de massage bien-être et de l'intégrité physique du client.</p>
+          <p>La responsabilité du prestataire ne saurait être engagée dans les cas suivants :</p>
+          <ul>
+            <li>Aggravation d'une pathologie préexistante non signalée avant la séance</li>
+            <li>Réaction allergique à une huile de massage non déclarée préalablement</li>
+            <li>Accident ou incident résultant d'un manquement du client à ses obligations (espace inadapté, non-déclaration d'une contre-indication, etc.)</li>
+            <li>Effets indésirables liés à une contre-indication médicale non communiquée</li>
+          </ul>
+
+          <h2>11. Droit de rétractation</h2>
+          <p>Conformément à l'article L.221-28 12° du Code de la consommation, <strong>le droit de rétractation de 14 jours ne s'applique pas</strong> aux prestations de service pleinement exécutées avant l'expiration du délai de rétractation, dès lors que leur exécution a commencé avec l'accord exprès du consommateur.</p>
+          <p>En acceptant une réservation et en bénéficiant d'une séance de massage, le client reconnaît expressément renoncer à son droit de rétractation pour la prestation exécutée.</p>
+
+          <h2>12. Protection des données personnelles</h2>
+          <p>Les informations collectées lors de la réservation (nom, prénom, téléphone, email, adresse d'intervention) sont utilisées exclusivement dans le cadre de la gestion des rendez-vous. Elles sont conservées pour une durée maximale de 3 ans à compter du dernier contact et ne sont jamais cédées à des tiers.</p>
+          <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et d'effacement de vos données en contactant : <a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></p>
+
+          <h2>13. Médiation & règlement des litiges</h2>
+          <p>En cas de litige relatif à l'exécution des présentes CGV, le client s'engage à contacter Un cocon de joie en priorité afin de trouver une solution amiable.</p>
+          <p>À défaut d'accord amiable dans un délai de 30 jours, le client consommateur peut recourir gratuitement à un médiateur de la consommation, conformément aux articles L.611-1 et suivants du Code de la consommation. La liste des médiateurs agréés est disponible sur <a href="https://www.economie.gouv.fr" target="_blank" rel="noopener">economie.gouv.fr</a>.</p>
+          <p>La plateforme européenne de règlement en ligne des litiges est accessible à l'adresse : <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></p>
+
+          <h2>14. Droit applicable & juridiction compétente</h2>
+          <p>Les présentes CGV sont soumises au <strong>droit français</strong>. En cas de litige non résolu par voie amiable ou de médiation, les tribunaux compétents sont ceux du ressort de la <strong>Cour d'appel de Lyon</strong>, sauf disposition légale d'ordre public contraire (notamment pour les consommateurs, le tribunal du lieu de domicile du consommateur peut être compétent).</p>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="footer__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+          <p class="footer__tagline">Léa, masseuse certifiée à Lyon. Je me déplace à votre domicile, en entreprise ou en résidence.</p>
+          <p class="footer__mention">Massage à but non thérapeutique uniquement. Aucun caractère sexuel ou érotique.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigation</p>
+          <nav class="footer__nav">
+            <a href="index.html" class="footer__nav-link">Accueil</a>
+            <a href="a-propos.html" class="footer__nav-link">À propos</a>
+            <a href="prestations.html" class="footer__nav-link">Prestations</a>
+            <a href="tarifs.html" class="footer__nav-link">Tarifs</a>
+            <a href="faq.html" class="footer__nav-link">FAQ</a>
+            <a href="contact.html" class="footer__nav-link">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact &amp; Horaires</p>
+          <address class="footer__contact" style="font-style:normal">
+            <div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span><a href="tel:+33673323801">06.73.32.38.01</a></span></div>
+            <div class="footer__contact-item"><span class="footer__contact-icon">✉️</span><span><a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></span></div>
+          </address>
+          <div class="footer__hours" style="margin-top:1.5rem">
+            <strong>Lun–Mer</strong> 14h → 19h<br>
+            <strong>Jeu–Ven</strong> 9h → 19h<br>
+            <strong>Sam</strong> 8h → 10h · <strong>Dim</strong> Fermé
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Un cocon de joie · Tous droits réservés</p>
+        <p class="footer__credit">Site créé par <a href="https://central-web-agency.com/index.html" target="_blank" rel="noopener">CWA · Central Web Agency</a></p>
+        <nav class="footer__legal">
+          <a href="mentions-legales.html" class="footer__legal-link">Mentions légales</a>
+          <a href="cgv.html" class="footer__legal-link">CGV</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

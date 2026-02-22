@@ -1,0 +1,146 @@
+// ============================================================
+// _legal.scss — Styles partagés mentions légales & CGV
+// ============================================================
+@use 'variables';
+
+.legal-page {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.legal-date {
+  display: inline-block;
+  font-size: variables.$text-xs;
+  color: variables.$text-light;
+  font-style: italic;
+  background: rgba(variables.$terracotta-pale, 0.2);
+  border-left: 3px solid variables.$gold;
+  padding: .5rem 1rem;
+  margin-bottom: variables.$s8;
+}
+
+.legal-page h2 {
+  font-family: variables.$font-serif;
+  font-size: variables.$text-xl;
+  color: variables.$terracotta;
+  margin: variables.$s8 0 variables.$s3;
+  padding-bottom: variables.$s2;
+  border-bottom: 1px solid rgba(variables.$terracotta-pale, 0.5);
+
+  &:first-of-type { margin-top: 0; }
+
+  @media (max-width: variables.$bp-sm) { font-size: variables.$text-lg; }
+}
+
+.legal-page h3 {
+  font-family: variables.$font-serif;
+  font-size: variables.$text-lg;
+  color: variables.$text-dark;
+  margin: variables.$s4 0 variables.$s2;
+}
+
+.legal-page p {
+  font-size: variables.$text-base;
+  color: variables.$text-mid;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: variables.$s3;
+}
+
+.legal-page ul,
+.legal-page ol {
+  margin: variables.$s2 0 variables.$s4 variables.$s4;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.legal-page ul { list-style: disc; }
+.legal-page ol { list-style: decimal; }
+
+.legal-page li {
+  font-size: variables.$text-base;
+  color: variables.$text-mid;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.legal-page strong {
+  font-weight: 400;
+  color: variables.$text-dark;
+}
+
+.legal-page a {
+  color: variables.$terracotta;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  &:hover { color: variables.$terracotta-dark; }
+}
+
+// ── Bloc info encadré ──
+.legal-info-box {
+  background: variables.$white;
+  border: 1px solid rgba(variables.$terracotta-pale, 0.5);
+  padding: variables.$s5 variables.$s6;
+  margin: variables.$s4 0 variables.$s5;
+
+  p { margin-bottom: variables.$s1; }
+  p:last-child { margin-bottom: 0; }
+
+  @media (max-width: variables.$bp-sm) { padding: variables.$s4; }
+}
+
+// ── Tableau tarifs CGV ──
+.legal-tarifs {
+  width: 100%;
+  border-collapse: collapse;
+  margin: variables.$s3 0 variables.$s5;
+}
+
+.legal-tarifs th {
+  font-size: variables.$text-xs;
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: variables.$text-light;
+  padding: 0 variables.$s2 variables.$s2 0;
+  text-align: left;
+  border-bottom: 1.5px solid rgba(variables.$terracotta-pale, 0.5);
+}
+
+.legal-tarifs td {
+  padding: variables.$s3 variables.$s2 variables.$s3 0;
+  font-size: variables.$text-base;
+  font-weight: 300;
+  color: variables.$text-mid;
+  border-bottom: 1px solid rgba(variables.$terracotta-pale, 0.25);
+}
+
+.legal-tarifs td:first-child {
+  font-family: variables.$font-serif;
+  color: variables.$text-dark;
+}
+
+.legal-tarifs td:last-child {
+  font-family: variables.$font-serif;
+  font-size: variables.$text-xl;
+  color: variables.$terracotta;
+  text-align: right;
+}
+
+.legal-tarifs tr:last-child td { border-bottom: none; }
+
+// ── Alerte / note importante ──
+.legal-alert {
+  background: rgba(variables.$terracotta-pale, 0.2);
+  border-left: 3px solid variables.$terracotta;
+  padding: variables.$s3 variables.$s4;
+  margin: variables.$s4 0;
+  font-size: variables.$text-sm;
+  color: variables.$text-mid;
+  font-weight: 300;
+  line-height: 1.8;
+
+  strong { color: variables.$terracotta; }
+  @media (max-width: variables.$bp-sm) { padding: variables.$s3; }
+}

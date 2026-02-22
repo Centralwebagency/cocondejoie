@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <title>Mentions légales — Un cocon de joie · Lyon</title>
+  <meta name="description" content="Mentions légales du site Un cocon de joie — activité de massage bien-être à domicile à Lyon." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+
+  <header>
+    <nav class="nav nav--solid" :class="{ 'is-scrolled': isScrolled }">
+      <div class="nav__container">
+        <a href="index.html" class="nav__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+          <li><a href="prestations.html" class="nav__link">Prestations</a></li>
+          <li><a href="tarifs.html" class="nav__link">Tarifs</a></li>
+          <li><a href="faq.html" class="nav__link">FAQ</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta">Réserver</a></li>
+        </ul>
+        <button class="nav__hamburger" :class="{ 'is-open': menuOpen }" @click="toggleMenu" aria-label="Ouvrir le menu" :aria-expanded="String(menuOpen)">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <nav class="mobile-menu" :class="{ 'is-open': menuOpen }">
+      <a href="index.html" class="mobile-menu__link" @click="closeMenu">Accueil</a>
+      <div class="mobile-menu__divider"></div>
+      <a href="a-propos.html" class="mobile-menu__link" @click="closeMenu">À propos</a>
+      <a href="prestations.html" class="mobile-menu__link" @click="closeMenu">Prestations</a>
+      <a href="tarifs.html" class="mobile-menu__link" @click="closeMenu">Tarifs</a>
+      <a href="faq.html" class="mobile-menu__link" @click="closeMenu">FAQ</a>
+      <a href="contact.html" class="mobile-menu__cta" @click="closeMenu">Prendre rendez-vous</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero__content">
+          <nav aria-label="Fil d'Ariane">
+            <p class="breadcrumb"><a href="index.html">Accueil</a> <span>/</span> <span aria-current="page">Mentions légales</span></p>
+          </nav>
+          <h1 class="page-hero__title">Mentions <em>légales</em></h1>
+          <p class="page-hero__subtitle">Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="legal-page">
+
+          <p class="legal-date">Dernière mise à jour : février 2025</p>
+
+          <h2>1. Éditeur du site</h2>
+          <div class="legal-info-box">
+            <p><strong>Nom commercial :</strong> Un cocon de joie</p>
+            <p><strong>Responsable de publication :</strong> Léa Bontron</p>
+            <p><strong>Statut juridique :</strong> Entrepreneur individuel (micro-entreprise)</p>
+            <p><strong>Activité :</strong> Massage bien-être à domicile — code APE 9609Z</p>
+            <p><strong>SIRET :</strong> 100 737 311 00017</p>
+            <p><strong>Adresse :</strong> Lyon (69), France</p>
+            <p><strong>Téléphone :</strong> <a href="tel:+33673323801">06.73.32.38.01</a></p>
+            <p><strong>Email :</strong> <a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></p>
+          </div>
+
+          <h2>2. Hébergement</h2>
+          <div class="legal-info-box">
+            <p><strong>Hébergeur :</strong> Netlify, Inc.</p>
+            <p><strong>Adresse :</strong> 44 Montgomery Street, Suite 300 — San Francisco, CA 94104, États-Unis</p>
+            <p><strong>Site :</strong> <a href="https://www.netlify.com" target="_blank" rel="noopener">www.netlify.com</a></p>
+          </div>
+
+          <h2>3. Conception & réalisation</h2>
+          <div class="legal-info-box">
+            <p><strong>Agence :</strong> <a href="https://central-web-agency.com/index.html" target="_blank" rel="noopener">CWA · Central Web Agency</a></p>
+          </div>
+
+          <h2>4. Propriété intellectuelle</h2>
+          <p>L'ensemble du contenu de ce site — textes, visuels, logo, structure, mise en page — est la propriété exclusive de <strong>Un cocon de joie</strong> et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle (Code de la propriété intellectuelle, articles L.111-1 et suivants).</p>
+          <p>Toute reproduction, représentation, modification ou exploitation, totale ou partielle, de ce contenu, par quelque procédé que ce soit, est strictement interdite sans autorisation écrite préalable.</p>
+
+          <h2>5. Nature de l'activité</h2>
+          <div class="legal-alert">
+            <strong>Important :</strong> Les massages proposés par Un cocon de joie sont des massages à but <strong>non thérapeutique</strong>, de relaxation et de bien-être uniquement. Ils ne constituent en aucun cas des actes médicaux, de kinésithérapie ou d'ostéopathie et ne peuvent se substituer à un avis ou suivi médical. Ces massages <strong>n'ont aucun caractère sexuel ou érotique</strong>.
+          </div>
+
+          <h2>6. Protection des données personnelles (RGPD)</h2>
+          <p>Conformément au Règlement (UE) 2016/679 du 27 avril 2016 (RGPD) et à la loi Informatique et Libertés modifiée, vous disposez des droits suivants concernant vos données personnelles :</p>
+          <ul>
+            <li>Droit d'accès et de rectification</li>
+            <li>Droit à l'effacement (« droit à l'oubli »)</li>
+            <li>Droit à la limitation du traitement</li>
+            <li>Droit d'opposition</li>
+            <li>Droit à la portabilité</li>
+          </ul>
+          <p>Les données collectées via le formulaire de contact (prénom, nom, email, téléphone) sont utilisées exclusivement pour répondre aux demandes de rendez-vous. Elles ne sont jamais cédées ni revendues à des tiers.</p>
+          <p>Pour exercer vos droits ou pour toute question relative à vos données, contactez : <a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></p>
+          <p>En cas de réclamation non résolue, vous pouvez saisir la <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a> (Commission Nationale de l'Informatique et des Libertés).</p>
+
+          <h2>7. Cookies</h2>
+          <p>Ce site n'utilise <strong>aucun cookie publicitaire ni de traçage</strong>. Les seuls cookies pouvant être déposés sont des cookies techniques strictement nécessaires au bon fonctionnement du site. Ils ne nécessitent pas de consentement préalable au titre de l'article 82 de la loi Informatique et Libertés.</p>
+
+          <h2>8. Liens hypertextes</h2>
+          <p>Ce site peut contenir des liens vers des sites tiers. Un cocon de joie n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou leur politique de confidentialité.</p>
+
+          <h2>9. Limitation de responsabilité</h2>
+          <p>Un cocon de joie s'efforce d'assurer l'exactitude et la mise à jour des informations publiées sur ce site. Toutefois, sa responsabilité ne saurait être engagée en cas d'inexactitude ou d'omission. Les informations sont fournies à titre indicatif et peuvent être modifiées sans préavis.</p>
+
+          <h2>10. Droit applicable & juridiction</h2>
+          <p>Les présentes mentions légales sont régies par le droit français. En cas de litige, les tribunaux compétents sont ceux du ressort de la Cour d'appel de Lyon, sauf disposition légale d'ordre public contraire.</p>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="footer__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
+          <p class="footer__tagline">Léa, masseuse certifiée à Lyon. Je me déplace à votre domicile, en entreprise ou en résidence.</p>
+          <p class="footer__mention">Massage à but non thérapeutique uniquement. Aucun caractère sexuel ou érotique.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigation</p>
+          <nav class="footer__nav">
+            <a href="index.html" class="footer__nav-link">Accueil</a>
+            <a href="a-propos.html" class="footer__nav-link">À propos</a>
+            <a href="prestations.html" class="footer__nav-link">Prestations</a>
+            <a href="tarifs.html" class="footer__nav-link">Tarifs</a>
+            <a href="faq.html" class="footer__nav-link">FAQ</a>
+            <a href="contact.html" class="footer__nav-link">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact &amp; Horaires</p>
+          <address class="footer__contact" style="font-style:normal">
+            <div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span><a href="tel:+33673323801">06.73.32.38.01</a></span></div>
+            <div class="footer__contact-item"><span class="footer__contact-icon">✉️</span><span><a href="mailto:cocondejoie@hotmail.com">cocondejoie@hotmail.com</a></span></div>
+          </address>
+          <div class="footer__hours" style="margin-top:1.5rem">
+            <strong>Lun–Mer</strong> 14h → 19h<br>
+            <strong>Jeu–Ven</strong> 9h → 19h<br>
+            <strong>Sam</strong> 8h → 10h · <strong>Dim</strong> Fermé
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Un cocon de joie · Tous droits réservés</p>
+        <p class="footer__credit">Site créé par <a href="https://central-web-agency.com/index.html" target="_blank" rel="noopener">CWA · Central Web Agency</a></p>
+        <nav class="footer__legal">
+          <a href="mentions-legales.html" class="footer__legal-link">Mentions légales</a>
+          <a href="cgv.html" class="footer__legal-link">CGV</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
