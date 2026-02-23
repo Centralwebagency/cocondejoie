@@ -4,7 +4,15 @@
 // ============================================================
 const { createApp } = Vue;
 
+// ⚠️  Endpoint Formspree — remplacer par votre ID
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mlgwpbvj';
+
+// ══════════════════════════════════════════════
+// POPUP OFFRE — 1 seule ligne à changer
+// true  → popup active sur index.html
+// false → popup désactivée complètement
+// ══════════════════════════════════════════════
+const POPUP_ENABLED = true;
 
 createApp({
   data() {
@@ -16,6 +24,9 @@ createApp({
       // ── FAQ accordion ──
       faqOpen: null,
 
+      // ── Popup promo ──
+      popupOpen: false,
+
       // ── Formulaire ──
       form: {
         prenom:    '',
@@ -24,7 +35,7 @@ createApp({
         telephone: '',
         type:      '',
         message:   '',
-        _honey:    '',   // honeypot — ne jamais afficher ce champ à l'utilisateur
+        _honey:    '', // honeypot — ne jamais afficher ce champ à l'utilisateur
       },
       formErrors:     {},
       formSubmitting: false,
@@ -47,6 +58,9 @@ createApp({
 
     this.markActiveLink();
     this.initAnimations();
+
+    // Popup : uniquement sur index.html, à chaque chargement/refresh
+    this.initPopup();
   },
 
   beforeUnmount() {
@@ -54,18 +68,22 @@ createApp({
   },
 
   methods: {
+
     // ── NAV ──
     onScroll() {
       this.isScrolled = window.scrollY > 60;
     },
+
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
       document.body.style.overflow = this.menuOpen ? 'hidden' : '';
     },
+
     closeMenu() {
       this.menuOpen = false;
       document.body.style.overflow = '';
     },
+
     markActiveLink() {
       const page = window.location.pathname.split('/').pop() || 'index.html';
       document.querySelectorAll('.nav__link, .mobile-menu__link').forEach(el => {
@@ -80,8 +98,23 @@ createApp({
     toggleFaq(i) {
       this.faqOpen = this.faqOpen === i ? null : i;
     },
+
     isFaqOpen(i) {
       return this.faqOpen === i;
+    },
+
+    // ── POPUP ──
+    initPopup() {
+      // Actif uniquement sur index.html + si flag activé
+      const isHome = ['', 'index.html', '/'].includes(window.location.pathname.split('/').pop());
+      if (!POPUP_ENABLED || !isHome || !document.getElementById('popup-overlay')) return;
+
+      // Délai 1.2s avant apparition
+      setTimeout(() => { this.popupOpen = true; }, 1200);
+    },
+
+    closePopup() {
+      this.popupOpen = false;
     },
 
     // ── FORMULAIRE ──
@@ -108,12 +141,12 @@ createApp({
 
       try {
         const payload = {
-          Prénom:     this.form.prenom,
-          Nom:        this.form.nom,
-          Email:      this.form.email,
-          Téléphone:  this.form.telephone || 'Non renseigné',
-          'Type de soin': this.form.type,
-          Message:    this.form.message || 'Aucun message',
+          Prénom:          this.form.prenom,
+          Nom:             this.form.nom,
+          Email:           this.form.email,
+          Téléphone:       this.form.telephone || 'Non renseigné',
+          'Type de soin':  this.form.type,
+          Message:         this.form.message || 'Aucun message',
         };
 
         const response = await fetch(FORMSPREE_ENDPOINT, {
@@ -163,5 +196,6 @@ createApp({
       );
       document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     },
+
   },
 }).mount('#app');

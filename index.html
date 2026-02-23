@@ -67,7 +67,7 @@
           <h1 class="hero__title">Un cocon de<br><em>joie & douceur</em></h1>
           <p class="hero__text">Masseuse certifiée, je me déplace à votre domicile, en entreprise ou en résidence pour vous offrir une véritable parenthèse de bien-être — douce, personnalisée, à votre rythme.</p>
           <ul class="hero__info" aria-label="Informations pratiques">
-            <li class="hero__info-item"><span class="icon" aria-hidden="true">📍</span><span>Lyon et agglomération · Déplacement à domicile</span></li>
+            <li class="hero__info-item"><span class="icon" aria-hidden="true">📍</span><span>Lyon et agglomération · Déplacement à domicile (Femme exclusivement)</span></li>
             <li class="hero__info-item"><span class="icon" aria-hidden="true">✨</span><span>Table de massage · Fauteuil · Futon — vous choisissez</span></li>
             <li class="hero__info-item"><span class="icon" aria-hidden="true">🌿</span><span>Huiles bio · Linge propre · Matériel fourni</span></li>
           </ul>
@@ -93,7 +93,7 @@
           </div>
           <div class="stat-item fade-up">
             <div class="stat-item__number">100%</div>
-            <div class="stat-item__label">Certifiée & formée</div>
+            <div class="stat-item__label">formée</div>
           </div>
           <div class="stat-item fade-up">
             <div class="stat-item__number">Bio</div>
@@ -112,7 +112,7 @@
             <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=700&q=80" alt="Léa, masseuse bien-être certifiée à Lyon — Un cocon de joie" class="about-image" width="560" height="700" loading="lazy" />
             <div class="about-badge" aria-label="Formation certifiée">
               <span class="num">✓</span>
-              <span class="label">Certifiée<br>& formée</span>
+              <span class="label"><br>formée</span>
             </div>
           </div>
           <div class="about-content fade-up">
@@ -138,7 +138,7 @@
         <div class="prestations-grid">
           <article class="card-presta fade-up">
             <span class="card-presta__icon" aria-hidden="true">🌿</span>
-            <h3 class="card-presta__name">À domicile</h3>
+            <h3 class="card-presta__name">À domicile (Femme exclusivement)</h3>
             <p class="card-presta__desc">Je viens chez vous avec tout le matériel. Vous n'avez qu'à prévoir un espace calme et chauffé.</p>
             <span class="card-presta__tag">1h · 65 €</span>
           </article>
@@ -181,7 +181,7 @@
       <div class="footer__grid">
         <div>
           <a href="index.html" class="footer__logo">Un cocon de joie<span>Massage bien-être · Lyon</span></a>
-          <p class="footer__tagline">Léa, masseuse certifiée à Lyon. Je me déplace à votre domicile, en entreprise ou en résidence pour des soins personnalisés, en douceur.</p>
+          <p class="footer__tagline">Léa, masseuse à Lyon. Je me déplace à votre domicile, en entreprise ou en résidence pour des soins personnalisés, en douceur.</p>
           <p class="footer__mention">Massage à but non thérapeutique, de relaxation et de bien-être uniquement. Aucun caractère sexuel ou érotique. Merci de respecter mon travail.</p>
         </div>
         <div>
@@ -211,7 +211,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copyright">© 2025 Un cocon de joie · Tous droits réservés</p>
+        <p class="footer__copyright">© 2026 Un cocon de joie · Tous droits réservés</p>
         <p class="footer__credit">Site créé par <a href="https://central-web-agency.com/index.html" target="_blank" rel="noopener">CWA · Central Web Agency</a></p>
         <nav class="footer__legal" aria-label="Liens légaux">
           <a href="mentions-legales.html" class="footer__legal-link">Mentions légales</a>
@@ -220,6 +220,50 @@
       </div>
     </div>
   </footer>
+<!-- ════════════════════════════════════════
+     POPUP OFFRE DE BIENVENUE
+     ▶ Activer/désactiver : POPUP_ENABLED dans js/script.js
+     ▶ Modifier les textes directement ici
+════════════════════════════════════════ -->
+<div id="popup-overlay" class="popup-overlay" :class="{ 'is-open': popupOpen }" @click.self="closePopup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup">
+
+    <!-- Barre déco -->
+    <div class="popup__top-bar"></div>
+
+    <!-- Bouton fermer -->
+    <button class="popup__close" @click="closePopup" aria-label="Fermer l'offre">✕</button>
+
+    <div class="popup__body">
+
+      <!-- CÔTÉ GAUCHE : visuel prix -->
+      <div class="popup__visual">
+        <span class="popup__badge">Offre limitée</span>
+        <p class="popup__tag">1ère séance</p>
+        <div class="popup__promo-wrap">
+          <!-- ✏️ Prix -->
+          <span class="popup__old-price">65 €</span>
+          <span class="popup__new-price"><span>€</span>55</span>
+        </div>
+        <!-- ✏️ Économie -->
+        <p class="popup__saving">Vous économisez 10 €</p>
+      </div>
+
+      <!-- CÔTÉ DROIT : texte + CTA -->
+      <div class="popup__content">
+        <p class="popup__eyebrow">Offre de bienvenue à partir d'une séance à 65€</p>
+        <!-- ✏️ Titre -->
+        <h2 class="popup__title" id="popup-title">Votre 1ère séance à <em>prix réduit</em></h2>
+        <!-- ✏️ Texte -->
+        <p class="popup__text">Profitez de <strong>-10 € sur votre première séance</strong> de massage californien à domicile. Une façon douce de découvrir un moment de bien-être rien que pour vous.</p>
+        <!-- ✏️ Bouton -->
+        <a href="contact.html" class="popup__cta" @click="closePopup">J'en profite — 55 €</a>
+        <button class="popup__skip" @click="closePopup">Non merci, je continue</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 </div><!-- #app -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>

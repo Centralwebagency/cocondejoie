@@ -1,0 +1,256 @@
+// ============================================================
+// _popup.scss — Popup offre promotionnelle
+// Activer/désactiver : POPUP_ENABLED dans script.js
+// ============================================================
+@use 'variables';
+
+// ── OVERLAY ──
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9100;
+  background: rgba(variables.$terracotta-dark, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: variables.$s4;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .45s ease, visibility .45s ease;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+
+    .popup {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+// ── POPUP ──
+.popup {
+  position: relative;
+  background: variables.$cream;
+  max-width: 520px;
+  width: 100%;
+  overflow: hidden;
+  transform: translateY(24px) scale(0.97);
+  opacity: 0;
+  transition: transform .5s cubic-bezier(.22,1,.36,1), opacity .45s ease;
+  transition-delay: .1s;
+
+  @media (max-width: variables.$bp-sm) { max-width: 100%; }
+}
+
+// ── BANDE DÉCORATIVE HAUTE ──
+.popup__top-bar {
+  height: 5px;
+  background: linear-gradient(90deg, variables.$terracotta, variables.$gold, variables.$terracotta-light);
+}
+
+// ── BOUTON FERMER ──
+.popup__close {
+  position: absolute;
+  top: variables.$s3;
+  right: variables.$s3;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: variables.$text-light;
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: color variables.$trans-fast, transform variables.$trans-fast;
+  z-index: 1;
+
+  &:hover {
+    color: variables.$terracotta;
+    transform: rotate(90deg);
+  }
+}
+
+// ── BODY ──
+.popup__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: variables.$bp-sm) { grid-template-columns: 1fr; }
+}
+
+// ── CÔTÉ VISUEL (gauche) ──
+.popup__visual {
+  background: variables.$terracotta;
+  padding: variables.$s8 variables.$s5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: variables.$s3;
+  position: relative;
+  overflow: hidden;
+
+  // Cercle déco en arrière-plan
+  &::before {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(variables.$terracotta-dark, 0.3);
+    bottom: -60px;
+    left: -60px;
+  }
+
+  @media (max-width: variables.$bp-sm) {
+    padding: variables.$s6 variables.$s5;
+    &::before { display: none; }
+  }
+}
+
+.popup__tag {
+  font-family: variables.$font-sans;
+  font-size: variables.$text-xs;
+  font-weight: 400;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: variables.$gold;
+  position: relative;
+}
+
+.popup__promo-wrap {
+  position: relative;
+  text-align: center;
+}
+
+.popup__old-price {
+  font-family: variables.$font-serif;
+  font-size: variables.$text-xl;
+  color: rgba(variables.$text-on-dark, 0.45);
+  text-decoration: line-through;
+  line-height: 1;
+  display: block;
+}
+
+.popup__new-price {
+  font-family: variables.$font-serif;
+  font-size: 4rem;
+  color: variables.$gold;
+  line-height: 1;
+  display: block;
+
+  span {
+    font-size: variables.$text-xl;
+    vertical-align: super;
+  }
+
+  @media (max-width: variables.$bp-sm) { font-size: 3.5rem; }
+}
+
+.popup__saving {
+  font-family: variables.$font-sans;
+  font-size: variables.$text-xs;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: rgba(variables.$text-on-dark, 0.7);
+  background: rgba(variables.$terracotta-dark, 0.4);
+  padding: .35rem .9rem;
+  position: relative;
+}
+
+// ── CÔTÉ CONTENU (droite) ──
+.popup__content {
+  padding: variables.$s8 variables.$s6 variables.$s6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: variables.$s3;
+
+  @media (max-width: variables.$bp-sm) { padding: variables.$s5 variables.$s5 variables.$s6; }
+}
+
+.popup__eyebrow {
+  font-family: variables.$font-sans;
+  font-size: variables.$text-xs;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: variables.$gold;
+  font-weight: 400;
+}
+
+.popup__title {
+  font-family: variables.$font-serif;
+  font-size: variables.$text-2xl;
+  color: variables.$text-dark;
+  line-height: 1.2;
+
+  em {
+    font-style: italic;
+    color: variables.$terracotta;
+  }
+
+  @media (max-width: variables.$bp-sm) { font-size: variables.$text-xl; }
+}
+
+.popup__text {
+  font-size: variables.$text-sm;
+  color: variables.$text-mid;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.popup__cta {
+  display: inline-block;
+  background: variables.$terracotta;
+  color: variables.$text-on-dark;
+  font-family: variables.$font-sans;
+  font-size: variables.$text-xs;
+  font-weight: 400;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: .95rem 1.8rem;
+  transition: background variables.$trans-base;
+  text-align: center;
+  margin-top: variables.$s1;
+
+  &:hover { background: variables.$terracotta-dark; color: variables.$text-on-dark; }
+}
+
+.popup__skip {
+  font-size: variables.$text-xs;
+  color: variables.$text-light;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: variables.$font-sans;
+  transition: color variables.$trans-fast;
+
+  &:hover { color: variables.$text-mid; text-decoration: underline; }
+}
+
+// ── BADGE "OFFRE LIMITÉE" ──
+.popup__badge {
+  position: absolute;
+  top: variables.$s3;
+  right: variables.$s3;
+  background: variables.$gold;
+  color: variables.$terracotta-dark;
+  font-family: variables.$font-sans;
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .3rem .7rem;
+  z-index: 1;
+}
