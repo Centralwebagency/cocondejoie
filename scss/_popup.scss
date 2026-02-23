@@ -1,7 +1,3 @@
-// ============================================================
-// _popup.scss — Popup offre promotionnelle
-// Activer/désactiver : POPUP_ENABLED dans script.js
-// ============================================================
 @use 'variables';
 
 // ── OVERLAY ──
@@ -16,19 +12,19 @@
   align-items: center;
   justify-content: center;
   padding: variables.$s4;
-
   opacity: 0;
   visibility: hidden;
   transition: opacity .45s ease, visibility .45s ease;
 
+  @media (max-width: variables.$bp-sm) {
+    padding: variables.$s2;
+    align-items: flex-end; // colle en bas sur mobile, plus naturel
+  }
+
   &.is-open {
     opacity: 1;
     visibility: visible;
-
-    .popup {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-    }
+    .popup { transform: translateY(0) scale(1); opacity: 1; }
   }
 }
 
@@ -44,7 +40,10 @@
   transition: transform .5s cubic-bezier(.22,1,.36,1), opacity .45s ease;
   transition-delay: .1s;
 
-  @media (max-width: variables.$bp-sm) { max-width: 100%; }
+  @media (max-width: variables.$bp-sm) {
+    max-width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
 }
 
 // ── BANDE DÉCORATIVE HAUTE ──
@@ -70,12 +69,8 @@
   font-size: 1.3rem;
   line-height: 1;
   transition: color variables.$trans-fast, transform variables.$trans-fast;
-  z-index: 1;
-
-  &:hover {
-    color: variables.$terracotta;
-    transform: rotate(90deg);
-  }
+  z-index: 2;
+  &:hover { color: variables.$terracotta; transform: rotate(90deg); }
 }
 
 // ── BODY ──
@@ -83,7 +78,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @media (max-width: variables.$bp-sm) { grid-template-columns: 1fr; }
+  @media (max-width: variables.$bp-sm) {
+    grid-template-columns: 1fr;
+  }
 }
 
 // ── CÔTÉ VISUEL (gauche) ──
@@ -99,7 +96,6 @@
   position: relative;
   overflow: hidden;
 
-  // Cercle déco en arrière-plan
   &::before {
     content: '';
     position: absolute;
@@ -112,7 +108,10 @@
   }
 
   @media (max-width: variables.$bp-sm) {
-    padding: variables.$s6 variables.$s5;
+    padding: variables.$s4 variables.$s4 variables.$s3;
+    flex-direction: row;        // horizontal sur mobile
+    justify-content: center;
+    gap: variables.$s5;
     &::before { display: none; }
   }
 }
@@ -125,6 +124,8 @@
   text-transform: uppercase;
   color: variables.$gold;
   position: relative;
+
+  @media (max-width: variables.$bp-sm) { display: none; } // masqué sur mobile
 }
 
 .popup__promo-wrap {
@@ -139,6 +140,8 @@
   text-decoration: line-through;
   line-height: 1;
   display: block;
+
+  @media (max-width: variables.$bp-sm) { font-size: variables.$text-base; }
 }
 
 .popup__new-price {
@@ -148,12 +151,9 @@
   line-height: 1;
   display: block;
 
-  span {
-    font-size: variables.$text-xl;
-    vertical-align: super;
-  }
+  span { font-size: variables.$text-xl; vertical-align: super; }
 
-  @media (max-width: variables.$bp-sm) { font-size: 3.5rem; }
+  @media (max-width: variables.$bp-sm) { font-size: 2.8rem; }
 }
 
 .popup__saving {
@@ -165,6 +165,8 @@
   background: rgba(variables.$terracotta-dark, 0.4);
   padding: .35rem .9rem;
   position: relative;
+
+  @media (max-width: variables.$bp-sm) { font-size: .65rem; }
 }
 
 // ── CÔTÉ CONTENU (droite) ──
@@ -175,7 +177,10 @@
   justify-content: center;
   gap: variables.$s3;
 
-  @media (max-width: variables.$bp-sm) { padding: variables.$s5 variables.$s5 variables.$s6; }
+  @media (max-width: variables.$bp-sm) {
+    padding: variables.$s3 variables.$s4 variables.$s5;
+    gap: variables.$s2;
+  }
 }
 
 .popup__eyebrow {
@@ -193,12 +198,9 @@
   color: variables.$text-dark;
   line-height: 1.2;
 
-  em {
-    font-style: italic;
-    color: variables.$terracotta;
-  }
+  em { font-style: italic; color: variables.$terracotta; }
 
-  @media (max-width: variables.$bp-sm) { font-size: variables.$text-xl; }
+  @media (max-width: variables.$bp-sm) { font-size: variables.$text-lg; }
 }
 
 .popup__text {
@@ -206,6 +208,8 @@
   color: variables.$text-mid;
   font-weight: 300;
   line-height: 1.8;
+
+  @media (max-width: variables.$bp-sm) { font-size: .8rem; line-height: 1.6; }
 }
 
 .popup__cta {
@@ -223,6 +227,8 @@
   margin-top: variables.$s1;
 
   &:hover { background: variables.$terracotta-dark; color: variables.$text-on-dark; }
+
+  @media (max-width: variables.$bp-sm) { padding: .8rem 1.2rem; font-size: .65rem; }
 }
 
 .popup__skip {
@@ -253,4 +259,6 @@
   text-transform: uppercase;
   padding: .3rem .7rem;
   z-index: 1;
+
+  @media (max-width: variables.$bp-sm) { display: none; }
 }
