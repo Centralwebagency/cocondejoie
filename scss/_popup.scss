@@ -17,8 +17,8 @@
   transition: opacity .45s ease, visibility .45s ease;
 
   @media (max-width: variables.$bp-sm) {
-    padding: variables.$s2;
-    align-items: flex-end; // colle en bas sur mobile, plus naturel
+    padding: 0;
+    align-items: flex-end;
   }
 
   &.is-open {
@@ -42,7 +42,7 @@
 
   @media (max-width: variables.$bp-sm) {
     max-width: 100%;
-    border-radius: 12px 12px 0 0;
+    border-radius: 16px 16px 0 0;
   }
 }
 
@@ -71,9 +71,11 @@
   transition: color variables.$trans-fast, transform variables.$trans-fast;
   z-index: 2;
   &:hover { color: variables.$terracotta; transform: rotate(90deg); }
+
+  @media (max-width: variables.$bp-sm) { color: rgba(variables.$text-on-dark, 0.7); }
 }
 
-// ── BODY ──
+// ── BODY — sur mobile : 1 seule colonne ──
 .popup__body {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -83,7 +85,7 @@
   }
 }
 
-// ── CÔTÉ VISUEL (gauche) ──
+// ── CÔTÉ VISUEL ──
 .popup__visual {
   background: variables.$terracotta;
   padding: variables.$s8 variables.$s5;
@@ -99,19 +101,19 @@
   &::before {
     content: '';
     position: absolute;
-    width: 220px;
-    height: 220px;
+    width: 220px; height: 220px;
     border-radius: 50%;
     background: rgba(variables.$terracotta-dark, 0.3);
-    bottom: -60px;
-    left: -60px;
+    bottom: -60px; left: -60px;
   }
 
+  // Sur mobile : bandeau horizontal compact
   @media (max-width: variables.$bp-sm) {
-    padding: variables.$s4 variables.$s4 variables.$s3;
-    flex-direction: row;        // horizontal sur mobile
+    flex-direction: row;
+    padding: variables.$s3 variables.$s5;
+    gap: variables.$s4;
     justify-content: center;
-    gap: variables.$s5;
+    align-items: center;
     &::before { display: none; }
   }
 }
@@ -124,8 +126,7 @@
   text-transform: uppercase;
   color: variables.$gold;
   position: relative;
-
-  @media (max-width: variables.$bp-sm) { display: none; } // masqué sur mobile
+  @media (max-width: variables.$bp-sm) { display: none; }
 }
 
 .popup__promo-wrap {
@@ -140,8 +141,7 @@
   text-decoration: line-through;
   line-height: 1;
   display: block;
-
-  @media (max-width: variables.$bp-sm) { font-size: variables.$text-base; }
+  @media (max-width: variables.$bp-sm) { font-size: 1rem; }
 }
 
 .popup__new-price {
@@ -150,10 +150,8 @@
   color: variables.$gold;
   line-height: 1;
   display: block;
-
   span { font-size: variables.$text-xl; vertical-align: super; }
-
-  @media (max-width: variables.$bp-sm) { font-size: 2.8rem; }
+  @media (max-width: variables.$bp-sm) { font-size: 2.4rem; }
 }
 
 .popup__saving {
@@ -165,11 +163,10 @@
   background: rgba(variables.$terracotta-dark, 0.4);
   padding: .35rem .9rem;
   position: relative;
-
-  @media (max-width: variables.$bp-sm) { font-size: .65rem; }
+  @media (max-width: variables.$bp-sm) { font-size: .65rem; padding: .25rem .6rem; }
 }
 
-// ── CÔTÉ CONTENU (droite) ──
+// ── CÔTÉ CONTENU ──
 .popup__content {
   padding: variables.$s8 variables.$s6 variables.$s6;
   display: flex;
@@ -178,7 +175,7 @@
   gap: variables.$s3;
 
   @media (max-width: variables.$bp-sm) {
-    padding: variables.$s3 variables.$s4 variables.$s5;
+    padding: variables.$s4 variables.$s4 variables.$s5;
     gap: variables.$s2;
   }
 }
@@ -190,6 +187,7 @@
   text-transform: uppercase;
   color: variables.$gold;
   font-weight: 400;
+  @media (max-width: variables.$bp-sm) { display: none; }
 }
 
 .popup__title {
@@ -197,10 +195,8 @@
   font-size: variables.$text-2xl;
   color: variables.$text-dark;
   line-height: 1.2;
-
   em { font-style: italic; color: variables.$terracotta; }
-
-  @media (max-width: variables.$bp-sm) { font-size: variables.$text-lg; }
+  @media (max-width: variables.$bp-sm) { font-size: 1.4rem; }
 }
 
 .popup__text {
@@ -208,8 +204,7 @@
   color: variables.$text-mid;
   font-weight: 300;
   line-height: 1.8;
-
-  @media (max-width: variables.$bp-sm) { font-size: .8rem; line-height: 1.6; }
+  @media (max-width: variables.$bp-sm) { display: none; } // masqué sur mobile, trop long
 }
 
 .popup__cta {
@@ -225,10 +220,8 @@
   transition: background variables.$trans-base;
   text-align: center;
   margin-top: variables.$s1;
-
   &:hover { background: variables.$terracotta-dark; color: variables.$text-on-dark; }
-
-  @media (max-width: variables.$bp-sm) { padding: .8rem 1.2rem; font-size: .65rem; }
+  @media (max-width: variables.$bp-sm) { padding: .85rem; margin-top: 0; }
 }
 
 .popup__skip {
@@ -241,11 +234,10 @@
   border: none;
   font-family: variables.$font-sans;
   transition: color variables.$trans-fast;
-
   &:hover { color: variables.$text-mid; text-decoration: underline; }
 }
 
-// ── BADGE "OFFRE LIMITÉE" ──
+// ── BADGE ──
 .popup__badge {
   position: absolute;
   top: variables.$s3;
@@ -259,6 +251,5 @@
   text-transform: uppercase;
   padding: .3rem .7rem;
   z-index: 1;
-
   @media (max-width: variables.$bp-sm) { display: none; }
 }
